@@ -1,0 +1,1419 @@
+{
+ "summary": {
+  "tfidf": {
+   "n": 32,
+   "hit@1": 0.844,
+   "hit@3": 0.906,
+   "hit@6": 0.969,
+   "mrr": 0.891,
+   "all_gold@k (comparativas)": 1.0
+  },
+  "bm25": {
+   "n": 32,
+   "hit@1": 0.906,
+   "hit@3": 0.938,
+   "hit@6": 0.969,
+   "mrr": 0.93,
+   "all_gold@k (comparativas)": 1.0
+  },
+  "dense": {
+   "n": 32,
+   "hit@1": 0.906,
+   "hit@3": 0.938,
+   "hit@6": 0.969,
+   "mrr": 0.928,
+   "all_gold@k (comparativas)": 1.0,
+   "max_dense_score": {
+    "answerable": {
+     "min": 0.46,
+     "mean": 0.621,
+     "max": 0.761
+    },
+    "unanswerable": {
+     "min": 0.368,
+     "mean": 0.464,
+     "max": 0.561
+    }
+   }
+  },
+  "hybrid": {
+   "n": 32,
+   "hit@1": 0.938,
+   "hit@3": 1.0,
+   "hit@6": 1.0,
+   "mrr": 0.958,
+   "all_gold@k (comparativas)": 1.0,
+   "max_dense_score": {
+    "answerable": {
+     "min": 0.46,
+     "mean": 0.621,
+     "max": 0.761
+    },
+    "unanswerable": {
+     "min": 0.368,
+     "mean": 0.464,
+     "max": 0.561
+    }
+   }
+  }
+ },
+ "per_question": {
+  "tfidf": [
+   {
+    "id": "q01",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q02",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q03",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2025:Clase_06:threads",
+     "2026:TICS_312_Threads_Intro_CF:threads"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q04",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2025:Clase_06:threads",
+     "2025:Clase_08:espacio_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q05",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:bugs_concurrencia",
+     "2025:Clase_03:lde",
+     "2026:TICS_312_Lock_CF_26:threads",
+     "2025:Clase_06:threads",
+     "2025:Clase_07:semaforos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q06",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:paginacion",
+     "2026:TICS_312_ch18_19:paginacion",
+     "2025:Clase_10:swap",
+     "2025:Clase_09:tablas_multinivel"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q07",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q08",
+    "first_rank": 4,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_01:intro_so",
+     "2025:Clase_08:traduccion_direcciones",
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_10:swap",
+     "2026:TICS_312_000_26_CFuentes:curso_admin"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q09",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2025:Clase_02:procesos",
+     "2026:TICS_312_001_CF_26:procesos",
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_01:intro_so",
+     "2025:Clase_08:traduccion_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q10",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_06:variables_condicion",
+     "2025:Clase_06:locks"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q11",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2025:Clase_01:curso_admin",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q12",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2026:TICS_312_000_26_CFuentes:estructura_so",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_001_CF_26:procesos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q13",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_04:sched_basico",
+     "2025:Clase_02:lab_xv6",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q14",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:lde",
+     "2026:TICS_312_001_CF_26:lde",
+     "2025:Clase_01:intro_so",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_08:traduccion_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q15",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:tlb",
+     "2026:TICS_312_ch18_19:tlb",
+     "2025:Clase_01:curso_admin",
+     "2025:Clase_01:intro_so",
+     "2025:Clase_01:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q16",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_011_26:fs_implementacion",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q17",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_010_26:fs_api",
+     "2025:Clase_11:fs_api",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q18",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_08:traduccion_direcciones",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q19",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_06:locks",
+     "2025:Clase_01:intro_so",
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_11:dispositivos_io"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q20",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_11:dispositivos_io",
+     "2026:TICS_312_010_26:dispositivos_io",
+     "2026:TICS_312_003_F:lde",
+     "2026:TICS_312_001_CF_26:lde",
+     "2025:Clase_10:reemplazo_paginas",
+     "2026:TICS_312_000_26_CFuentes:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q21",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2025:Clase_08:espacio_direcciones",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_Memoria_01:espacio_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q22",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q23",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q24",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_04:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q25",
+    "first_rank": 2,
+    "ranking": [
+     "2026:TICS_312_001_CF_26:procesos",
+     "2025:Clase_02:procesos",
+     "2025:Clase_05:lab_xv6"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q26",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_multiprocesador",
+     "2025:Clase_06:threads",
+     "2026:TICS_312_001_CF_26:procesos",
+     "2025:Clase_03:lde"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q27",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_12:fs_implementacion",
+     "2026:TICS_312_011_26:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q31",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q37",
+    "first_rank": 4,
+    "ranking": [
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_04:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q38",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_12:fs_implementacion",
+     "2026:TICS_312_011_26:fs_implementacion",
+     "2025:Clase_10:swap"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q39",
+    "first_rank": 2,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_03:lde",
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2026:TICS_312_000_26_CFuentes:estructura_so",
+     "2025:Clase_02:procesos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q40",
+    "first_rank": null,
+    "ranking": [
+     "2025:Clase_09:paginacion",
+     "2026:TICS_312_ch18_19:paginacion",
+     "2025:Clase_09:tablas_multinivel"
+    ],
+    "all_gold": null
+   }
+  ],
+  "bm25": [
+   {
+    "id": "q01",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q02",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q03",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2025:Clase_06:threads",
+     "2026:TICS_312_Threads_Intro_CF:threads"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q04",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_Lock_CF_26:locks"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q05",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:bugs_concurrencia",
+     "2025:Clase_03:lde",
+     "2026:TICS_312_Lock_CF_26:threads",
+     "2025:Clase_06:threads",
+     "2025:Clase_07:semaforos",
+     "2026:TICS_312_Threads_Intro_CF:threads"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q06",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:paginacion",
+     "2026:TICS_312_ch18_19:paginacion",
+     "2025:Clase_10:swap",
+     "2025:Clase_09:tablas_multinivel"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q07",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q08",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_01:intro_so",
+     "2026:TICS_312_000_26_CFuentes:intro_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q09",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2025:Clase_02:procesos",
+     "2026:TICS_312_001_CF_26:procesos",
+     "2025:Clase_01:intro_so",
+     "2026:TICS_312_000_26_CFuentes:intro_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q10",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_06:variables_condicion",
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_06:locks"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q11",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2025:Clase_01:curso_admin",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q12",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2026:TICS_312_000_26_CFuentes:estructura_so",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_001_CF_26:procesos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q13",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_04:sched_basico",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q14",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:lde",
+     "2026:TICS_312_001_CF_26:lde",
+     "2025:Clase_01:intro_so",
+     "2026:TICS_312_010_26:fs_api",
+     "2025:Clase_11:fs_api",
+     "2025:Clase_01:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q15",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:tlb",
+     "2026:TICS_312_ch18_19:tlb",
+     "2025:Clase_01:curso_admin",
+     "2025:Clase_01:intro_so",
+     "2025:Clase_01:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q16",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_011_26:fs_implementacion",
+     "2025:Clase_12:fs_implementacion",
+     "2025:Clase_11:fs_api"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q17",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_11:fs_api",
+     "2026:TICS_312_010_26:fs_api",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q18",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_08:traduccion_direcciones",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q19",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_06:locks",
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_01:intro_so",
+     "2025:Clase_11:dispositivos_io"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q20",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_11:dispositivos_io",
+     "2026:TICS_312_010_26:dispositivos_io",
+     "2026:TICS_312_001_CF_26:lde",
+     "2026:TICS_312_003_F:lde",
+     "2025:Clase_10:reemplazo_paginas",
+     "2026:TICS_312_000_26_CFuentes:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q21",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2025:Clase_08:espacio_direcciones",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_Memoria_01:espacio_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q22",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q23",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q24",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_04:sched_basico",
+     "2026:TICS_312_003_F:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q25",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_02:procesos",
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_03:api_procesos",
+     "2025:Clase_02:lab_xv6",
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q26",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_multiprocesador",
+     "2025:Clase_06:threads",
+     "2025:Clase_03:lde",
+     "2026:TICS_312_001_CF_26:procesos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q27",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_12:fs_implementacion",
+     "2026:TICS_312_011_26:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q31",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q37",
+    "first_rank": 4,
+    "ranking": [
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_04:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q38",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_12:fs_implementacion",
+     "2026:TICS_312_011_26:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q39",
+    "first_rank": 2,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_03:lde",
+     "2026:TICS_312_001_CF_26:lde",
+     "2026:TICS_312_000_26_CFuentes:estructura_so",
+     "2025:Clase_06:threads",
+     "2026:TICS_312_003_F:lde"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q40",
+    "first_rank": null,
+    "ranking": [
+     "2025:Clase_09:paginacion",
+     "2026:TICS_312_ch18_19:paginacion"
+    ],
+    "all_gold": null
+   }
+  ],
+  "dense": [
+   {
+    "id": "q01",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional",
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_06:threads"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q02",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional",
+     "2025:Clase_06:threads"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q03",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2025:Clase_11:fs_api",
+     "2026:TICS_312_010_26:fs_api"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q04",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2026:TICS_312_Threads_Intro_CF:threads",
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q05",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:bugs_concurrencia",
+     "2025:Clase_06:locks",
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2026:TICS_312_ch18_19:paginacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q06",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:paginacion",
+     "2026:TICS_312_ch18_19:paginacion",
+     "2025:Clase_10:swap",
+     "2025:Clase_10:reemplazo_paginas",
+     "2026:TICS_312_ch18_19:tlb"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q07",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_10:swap"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q08",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2025:Clase_08:traduccion_direcciones",
+     "2025:Clase_10:swap",
+     "2025:Clase_03:lde"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q09",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_01:intro_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q10",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_06:locks",
+     "2025:Clase_06:variables_condicion",
+     "2025:Clase_07:semaforos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q11",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:curso_admin",
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2025:Clase_04:sched_basico",
+     "2026:TICS_312_Lock_CF_26:threads"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q12",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2026:TICS_312_003_F:sched_basico",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_001_CF_26:lde"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q13",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_04:sched_basico",
+     "2025:Clase_05:lab_xv6",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q14",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_001_CF_26:lde",
+     "2025:Clase_03:lde",
+     "2026:TICS_312_003_F:lde",
+     "2026:TICS_312_001_CF_26:procesos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q15",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_ch18_19:tlb",
+     "2025:Clase_09:tlb",
+     "2025:Clase_07:bugs_concurrencia",
+     "2026:TICS_312_Threads_Intro_CF:threads",
+     "2026:TICS_312_003_F:lde",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q16",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_011_26:fs_implementacion",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q17",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_010_26:fs_api",
+     "2025:Clase_11:fs_api",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q18",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_08:traduccion_direcciones",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2025:Clase_08:espacio_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q19",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_06:locks",
+     "2025:Clase_07:semaforos",
+     "2025:Clase_01:estructura_so",
+     "2025:Clase_02:lab_xv6",
+     "2026:TICS_312_001_CF_26:api_procesos",
+     "2026:TICS_312_000_26_CFuentes:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q20",
+    "first_rank": 2,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas",
+     "2026:TICS_312_010_26:dispositivos_io",
+     "2025:Clase_11:dispositivos_io",
+     "2025:Clase_08:espacio_direcciones",
+     "2026:TICS_312_Memoria_01:espacio_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q21",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2025:Clase_04:sched_basico",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_003_F:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q22",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q23",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q24",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_04:sched_basico",
+     "2026:TICS_312_003_F:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q25",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_02:procesos",
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_03:api_procesos",
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q26",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_multiprocesador",
+     "2025:Clase_03:lde",
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q27",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_12:fs_implementacion",
+     "2026:TICS_312_011_26:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q31",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q37",
+    "first_rank": null,
+    "ranking": [
+     "2025:Clase_03:lde",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q38",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_011_26:fs_implementacion",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q39",
+    "first_rank": 5,
+    "ranking": [
+     "2026:TICS_312_001_CF_26:procesos",
+     "2025:Clase_02:procesos",
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_01:intro_so",
+     "2025:Clase_03:lde",
+     "2026:TICS_312_003_F:lde"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q40",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:tlb",
+     "2026:TICS_312_ch18_19:tlb",
+     "2026:TICS_312_ch18_19:paginacion",
+     "2025:Clase_09:paginacion",
+     "2025:Clase_10:reemplazo_paginas"
+    ],
+    "all_gold": null
+   }
+  ],
+  "hybrid": [
+   {
+    "id": "q01",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional",
+     "2025:Clase_05:lab_xv6",
+     "2026:TICS_312_003_F:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q02",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q03",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2026:TICS_312_010_26:fs_api",
+     "2025:Clase_11:fs_api"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q04",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:semaforos",
+     "2025:Clase_06:threads",
+     "2026:TICS_312_Threads_Intro_CF:threads",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q05",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_07:bugs_concurrencia",
+     "2025:Clase_06:locks",
+     "2026:TICS_312_Lock_CF_26:threads",
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_06:threads",
+     "2025:Clase_07:semaforos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q06",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:paginacion",
+     "2026:TICS_312_ch18_19:paginacion",
+     "2025:Clase_10:swap",
+     "2025:Clase_10:reemplazo_paginas"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q07",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_10:swap"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q08",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_10:swap",
+     "2025:Clase_08:traduccion_direcciones",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q09",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2025:Clase_01:intro_so",
+     "2026:TICS_312_000_26_CFuentes:estructura_so",
+     "2025:Clase_02:procesos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q10",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_Lock_CF_26:locks",
+     "2025:Clase_06:variables_condicion",
+     "2025:Clase_06:locks"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q11",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:curso_admin",
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2025:Clase_04:sched_basico",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q12",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_000_26_CFuentes:curso_admin",
+     "2026:TICS_312_003_F:mlfq",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2026:TICS_312_000_26_CFuentes:estructura_so",
+     "2026:TICS_312_003_F:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q13",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:sched_basico",
+     "2025:Clase_04:sched_basico",
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q14",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_001_CF_26:lde",
+     "2026:TICS_312_003_F:lde",
+     "2025:Clase_03:lde",
+     "2025:Clase_01:estructura_so",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2025:Clase_01:intro_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q15",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_09:tlb",
+     "2026:TICS_312_ch18_19:tlb",
+     "2025:Clase_03:lde",
+     "2025:Clase_07:bugs_concurrencia",
+     "2025:Clase_04:mlfq",
+     "2025:Clase_02:procesos"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q16",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_011_26:fs_implementacion",
+     "2025:Clase_12:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q17",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_11:fs_api",
+     "2026:TICS_312_010_26:fs_api"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q18",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_08:traduccion_direcciones",
+     "2026:TICS_312_Memoria_01:traduccion_direcciones",
+     "2025:Clase_09:paginacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q19",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_06:locks",
+     "2025:Clase_10:reemplazo_paginas",
+     "2025:Clase_07:semaforos",
+     "2026:TICS_312_003_F:lde",
+     "2026:TICS_312_001_CF_26:lde",
+     "2026:TICS_312_Lock_CF_26:locks"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q20",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_11:dispositivos_io",
+     "2026:TICS_312_010_26:dispositivos_io",
+     "2025:Clase_10:reemplazo_paginas",
+     "2026:TICS_312_000_26_CFuentes:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q21",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_01:estructura_so",
+     "2025:Clase_04:mlfq",
+     "2025:Clase_04:sched_basico",
+     "2025:Clase_08:espacio_direcciones"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q22",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q23",
+    "first_rank": 1,
+    "ranking": [
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:mlfq"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q24",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_04:sched_basico",
+     "2026:TICS_312_003_F:sched_basico"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q25",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_02:procesos",
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_03:api_procesos",
+     "2025:Clase_05:sched_proporcional"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q26",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_05:sched_multiprocesador",
+     "2025:Clase_03:lde",
+     "2025:Clase_05:lab_xv6",
+     "2025:Clase_06:threads"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q27",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_12:fs_implementacion",
+     "2026:TICS_312_011_26:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q31",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq"
+    ],
+    "all_gold": true
+   },
+   {
+    "id": "q37",
+    "first_rank": 3,
+    "ranking": [
+     "2025:Clase_04:mlfq",
+     "2026:TICS_312_003_F:mlfq",
+     "2025:Clase_04:sched_basico",
+     "2025:Clase_03:lde"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q38",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_12:fs_implementacion",
+     "2026:TICS_312_011_26:fs_implementacion"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q39",
+    "first_rank": 1,
+    "ranking": [
+     "2025:Clase_03:lde",
+     "2026:TICS_312_000_26_CFuentes:intro_so",
+     "2026:TICS_312_001_CF_26:procesos",
+     "2025:Clase_02:procesos",
+     "2026:TICS_312_003_F:lde",
+     "2026:TICS_312_000_26_CFuentes:estructura_so"
+    ],
+    "all_gold": null
+   },
+   {
+    "id": "q40",
+    "first_rank": 3,
+    "ranking": [
+     "2026:TICS_312_ch18_19:paginacion",
+     "2025:Clase_09:paginacion",
+     "2025:Clase_09:tlb",
+     "2026:TICS_312_ch18_19:tlb"
+    ],
+    "all_gold": null
+   }
+  ]
+ }
+}

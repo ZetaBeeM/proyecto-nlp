@@ -1,0 +1,160 @@
+# Glosario de conceptos de Sistemas Operativos usado para medir densidad conceptual.
+# Formato: concepto canónico | sinónimos/variantes separados por "|" (es/en). Se compara sin tildes y en minúsculas.
+# Un concepto se cuenta una vez por slide aunque aparezca con varios sinónimos.
+sistema operativo | operating system
+kernel | núcleo
+firmware | bios
+von neumann
+abstracción | abstraction
+virtualización | virtualization
+concurrencia | concurrency
+persistencia | persistence
+aislamiento | isolation
+protección | protection
+system call | llamada de sistema | llamadas de sistema | syscall
+modo usuario | user mode
+modo kernel | kernel mode | modo privilegiado
+trap | trap table | tabla de traps
+interrupción | interrupt | interrupciones
+timer interrupt | interrupción por timeout | timer
+monolítico | monolithic
+microkernel
+kernel modular | so modular
+meltdown
+proceso | process | procesos
+espacio de direcciones | address space
+program counter | pc
+stack pointer
+registro | registers | registros
+pcb | process control block | program control block
+context switch | cambio de contexto
+estado de proceso | running | ready | blocked
+zombie
+fork
+exec | execvp | execve
+wait | waitpid
+shell
+limited direct execution | ejecución directa limitada | lde
+ejecución directa | direct execution
+enfoque cooperativo | cooperative
+xv6
+git
+scheduler | planificador | scheduling | planificación
+turnaround time | tiempo de retorno
+response time | tiempo de respuesta
+fifo | first-in first-out | first in first out
+sjf | shortest job first
+stcf | shortest time to completion
+round robin | rr
+time slice | quantum | quantum de tiempo
+efecto convoy | convoy effect
+fairness | justicia
+mlfq | multi-level feedback queue | multilevel feedback queue
+priority boost
+prioridad | priority
+gaming | jugar con las reglas
+starvation | inanición
+voodoo constants
+proportional share | reparto proporcional
+lottery scheduling | lotería | lottery
+ticket | tickets
+stride scheduling | stride
+multiprocesador | multiprocessor | múltiples cpus
+cache coherence | coherencia de cache
+afinidad de cache | cache affinity
+sqms | single queue
+mqms | multi-queue
+load imbalance | carga desbalanceada
+migración | migration
+thread | threads | hilo | hilos
+pthread | pthread_create | pthread_join
+race condition | condición de carrera | condiciones de carrera | data race
+sección crítica | critical section
+mutual exclusion | exclusión mutua
+atomicidad | atomic | atómica | atomicity
+lock | locks | mutex | pthread_mutex
+spin lock | spinlock | spin-lock | busy waiting | busy-wait
+test-and-set | test and set
+compare-and-swap | compare and swap
+load-linked | store-conditional
+fetch-and-add | fetchandadd
+ticket lock
+yield
+futex
+two-phase lock | bloqueo de dos fases
+variable de condición | variables condicionales | condition variable | pthread_cond
+semáforo | semaphore | semáforos | sem_wait | sem_post
+productor/consumidor | producer/consumer | productor | consumidor
+deadlock | interbloqueo
+dining philosophers | dining
+violación de atomicidad | atomicity violation
+violación de orden | order violation
+memoria virtual | virtual memory
+memoria física | physical memory
+dirección virtual | virtual address | direcciones virtuales
+dirección física | physical address
+multiprogramming | multiprogramación
+heap
+stack
+malloc | calloc | realloc
+free
+brk | sbrk | mmap
+traducción de direcciones | address translation
+reubicación dinámica | dynamic relocation
+base y bounds | base and bounds | bounds
+mmu | memory management unit
+segmentación | segmentation | segmento | segment
+fragmentación externa | external fragmentation
+fragmentación interna | internal fragmentation
+compactación | compaction
+free list | lista libre | listas de memoria
+paginación | paging | página | page
+page frame | marco de página | frame
+page table | tabla de páginas | page tables
+vpn | virtual page number
+pfn | physical frame number
+offset
+valid bit | bit de validez
+present bit
+dirty bit
+protection bits | bits de protección
+tlb | translation lookaside buffer
+tlb hit | tlb miss
+asid | address space identifier
+páginas compartidas | shared pages
+lru | least recently used
+multi-level page table | multi level page tables | tabla multinivel
+page directory | pde
+inverted page table | inverted page tables
+swap | swap space | espacio de swap
+page fault | fallo de página
+swap daemon | page daemon
+watermark
+amat | average memory access time
+política óptima | optimal
+clock algorithm | algoritmo del reloj | clock
+thrashing | trashing
+dispositivo | device | dispositivos
+polling
+dma | direct memory access
+pio | programmed i/o
+driver | drivers
+bus
+dispositivo de bloque | block device
+archivo | file | archivos
+directorio | directory | directorios
+inodo | inode | inodos
+file descriptor | descriptor de archivo
+open | read | write | lseek | close
+fsync
+unlink
+hard link
+soft link | symbolic link
+vfs | virtual file system | sistema de archivo virtual
+sistema de archivos | file system | filesystem
+bitmap
+superbloque | superblock
+bloque | block | bloques
+índice multinivel | multi-level index | indirect pointer
+caching | cache
+buffering | write buffering

@@ -1,0 +1,977 @@
+{
+ "summary": {
+  "retriever": "tfidf",
+  "model": "qwen3:4b-instruct",
+  "n": 40,
+  "accuracy_answerable": 0.914,
+  "mean_fact_coverage": 0.929,
+  "false_abstention_rate": 0.057,
+  "correct_abstention_rate": 1.0,
+  "answers_with_unsupported_numbers": 2,
+  "answers_without_citations": 1,
+  "answers_with_low_lexical_support": 4,
+  "answers_with_year_mismatch": 1,
+  "mean_seconds": 1.2,
+  "by_type": {
+   "comparative": 0.0,
+   "density": 1.0,
+   "factual": 0.962,
+   "paraphrase": 0.75,
+   "unanswerable": 1.0
+  }
+ },
+ "per_question": [
+  {
+   "id": "q01",
+   "type": "factual",
+   "question": "¿Cómo se calcula el stride (paso) de un proceso en stride scheduling?",
+   "answer": "El stride de un proceso se calcula como la división de un número grande (por ejemplo, 10,000) por la cantidad de tickets que tiene el proceso. Por ejemplo, si un proceso tiene 100 tickets, su stride sería 100,000 / 100 = 100 [1]. [1]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1
+   ],
+   "warnings": [
+    "números no presentes en el contexto (posible alucinación): ['100,000']"
+   ],
+   "seconds": 1.3,
+   "sources": [
+    "2025/Clase_05 p34-38",
+    "2025/Clase_05 p38-42",
+    "2025/Clase_05 p9-15",
+    "2025/Clase_05 p15-21",
+    "2025/Clase_05 p28-34",
+    "2025/Clase_05 p21-28"
+   ]
+  },
+  {
+   "id": "q02",
+   "type": "factual",
+   "question": "En el ejemplo de stride scheduling con procesos A, B y C de 100, 50 y 250 tickets, ¿cuáles son sus strides?",
+   "answer": "Los strides de los procesos A, B y C son 100, 200 y 40, respectivamente.  \n[1]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1
+   ],
+   "warnings": [],
+   "seconds": 0.8,
+   "sources": [
+    "2025/Clase_05 p34-38",
+    "2025/Clase_05 p38-42",
+    "2025/Clase_05 p28-34",
+    "2025/Clase_05 p21-28",
+    "2025/Clase_05 p9-15",
+    "2025/Clase_05 p15-21"
+   ]
+  },
+  {
+   "id": "q03",
+   "type": "factual",
+   "question": "¿Qué es un semáforo y qué funciones POSIX se usan para manipularlo?",
+   "answer": "Un semáforo es un objeto con un valor entero que podemos manipular, y es una alternativa a la mezcla de Locks con variables condicionales, propuesta por Dijkstra [2]. Las funciones POSIX que se usan para manipularlo son sem_wait() y sem_post() [1][2].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2
+   ],
+   "warnings": [],
+   "seconds": 1.2,
+   "sources": [
+    "2025/Clase_07 p8-14",
+    "2025/Clase_07 p1-8",
+    "2025/Clase_07 p14-22",
+    "2025/Clase_07 p22-31",
+    "2025/Clase_06 p9-16",
+    "2026/TICS_312_Threads_Intro_CF p19-24"
+   ]
+  },
+  {
+   "id": "q04",
+   "type": "factual",
+   "question": "¿Qué condiciones deben cumplir el productor y el consumidor en el problema productor/consumidor?",
+   "answer": "El productor debe asegurarse de que no produzca más elementos que el tamaño del buffer, y el consumidor debe esperar hasta que haya al menos un elemento disponible para consumir. [1]  \nAdemás, se requiere que la sección crítica del productor y consumidor esté protegida para evitar condiciones de carrera y garantizar la sincronización entre ambos. [5]  \nLa implementación debe evitar spurious wake-ups y potenciales deadlocks, especialmente al usar semáforos o locks. [2]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    5
+   ],
+   "warnings": [
+    "bajo respaldo léxico (31%) en: \"Además, se requiere que la sección crítica del productor y consumidor esté protegida para \""
+   ],
+   "seconds": 1.6,
+   "sources": [
+    "2025/Clase_07 p14-22",
+    "2025/Clase_07 p22-31",
+    "2025/Clase_07 p1-8",
+    "2025/Clase_07 p8-14",
+    "2025/Clase_06 p16-19",
+    "2025/Clase_08 p15-19"
+   ]
+  },
+  {
+   "id": "q05",
+   "type": "factual",
+   "question": "¿Qué es un bug de violación de atomicidad?",
+   "answer": "No encontré esa información en las presentaciones del ramo.",
+   "correct": false,
+   "coverage": 0.0,
+   "abstained": true,
+   "retrieved_gold": true,
+   "cited": [],
+   "warnings": [
+    "bajo respaldo léxico (0%) en: \"Esto significa que una operación que debería ejecutarse como una sola unidad se divide en \"",
+    "bajo respaldo léxico (0%) en: \"Este tipo de error puede provocar comportamientos inesperados en sistemas concurrentes, es\"",
+    "respuesta descartada: 2/3 oraciones sin respaldo en sus fuentes"
+   ],
+   "seconds": 1.6,
+   "sources": [
+    "2025/Clase_07 p32-36",
+    "2025/Clase_03 p28-34",
+    "2026/TICS_312_Lock_CF_26 p7-9",
+    "2025/Clase_06 p16-19",
+    "2026/TICS_312_Lock_CF_26 p1-7",
+    "2025/Clase_07 p1-8"
+   ]
+  },
+  {
+   "id": "q06",
+   "type": "factual",
+   "question": "¿Qué indica el present bit de una página?",
+   "answer": "El present bit indica si la página está en memoria física o si se encuentra en disco. [4]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    4
+   ],
+   "warnings": [],
+   "seconds": 0.6,
+   "sources": [
+    "2025/Clase_09 p20-21",
+    "2026/TICS_312_ch18_19 p19-21",
+    "2025/Clase_09 p16-20",
+    "2025/Clase_10 p1-11",
+    "2025/Clase_10 p11-13",
+    "2025/Clase_09 p33-42"
+   ]
+  },
+  {
+   "id": "q07",
+   "type": "factual",
+   "question": "¿En qué consiste la política óptima de reemplazo de páginas y por qué no se usa en la práctica?",
+   "answer": "La política óptima de reemplazo de páginas consiste en sacar de memoria aquella página que será utilizada más en el futuro, lo que permite minimizar los misses de memoria [3]. No se usa en la práctica porque es imposible de implementar de forma eficiente, ya que requiere conocer el futuro acceso a las páginas, lo cual no es posible en un sistema operativo real [1].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    3
+   ],
+   "warnings": [
+    "bajo respaldo léxico (33%) en: \"No se usa en la práctica porque es imposible de implementar de forma eficiente, ya que req\""
+   ],
+   "seconds": 1.4,
+   "sources": [
+    "2025/Clase_10 p18-31",
+    "2025/Clase_10 p43-43",
+    "2025/Clase_10 p14-18",
+    "2025/Clase_10 p44-45",
+    "2025/Clase_10 p31-41",
+    "2025/Clase_10 p42-42"
+   ]
+  },
+  {
+   "id": "q08",
+   "type": "factual",
+   "question": "¿Qué hace el sistema operativo cuando ocurre thrashing?",
+   "answer": "Cuando ocurre thrashing, el sistema operativo decide no ejecutar un subset de procesos, permitiendo que los procesos que quedan puedan caber en la memoria. [4]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    4
+   ],
+   "warnings": [],
+   "seconds": 0.8,
+   "sources": [
+    "2026/TICS_312_000_26_CFuentes p13-15",
+    "2025/Clase_01 p1-11",
+    "2025/Clase_08 p32-36",
+    "2025/Clase_10 p31-41",
+    "2025/Clase_10 p11-13",
+    "2026/TICS_312_000_26_CFuentes p29-30"
+   ]
+  },
+  {
+   "id": "q09",
+   "type": "factual",
+   "question": "¿Qué características tiene un sistema operativo monolítico?",
+   "answer": "Un sistema operativo monolítico incluye todos los servicios y drivers de hardware dentro del sistema operativo. Esto optimiza los procesos de ejecución, pero dificulta su mantenimiento y hace que el sistema sea muy pesado. [1]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1
+   ],
+   "warnings": [],
+   "seconds": 1.0,
+   "sources": [
+    "2025/Clase_01 p40-49",
+    "2025/Clase_02 p1-10",
+    "2026/TICS_312_001_CF_26 p1-11",
+    "2026/TICS_312_000_26_CFuentes p13-15",
+    "2025/Clase_01 p1-11",
+    "2025/Clase_08 p32-36"
+   ]
+  },
+  {
+   "id": "q10",
+   "type": "factual",
+   "question": "¿Cómo funciona un two-phase lock?",
+   "answer": "Un two-phase lock funciona en dos fases: en la primera fase, el hilo realiza un busy waiting con un timeout, esperando que el lock esté disponible; si no lo adquiere, entra a la segunda fase, donde se pone a dormir. El hilo se despierta cuando el lock se libera más tarde. [1][2][3]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    3
+   ],
+   "warnings": [],
+   "seconds": 1.3,
+   "sources": [
+    "2026/TICS_312_Lock_CF_26 p40-44",
+    "2026/TICS_312_Lock_CF_26 p30-40",
+    "2025/Clase_06 p51-59",
+    "2025/Clase_06 p47-50",
+    "2026/TICS_312_Lock_CF_26 p10-18",
+    "2025/Clase_06 p20-30"
+   ]
+  },
+  {
+   "id": "q11",
+   "type": "comparative",
+   "question": "¿Cuántas pruebas tenía el curso en 2025 y cuántas en 2026?",
+   "answer": "En 2025, el curso tenía 3 pruebas (P1, P2, P3) [1]. En 2026, el curso tenía 3 pruebas (P1, P2, P3) [1].  \n[1]",
+   "correct": false,
+   "coverage": 0.5,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1
+   ],
+   "warnings": [
+    "oración sobre 2025 cita sólo fragmentos de otro año: \"En 2025, el curso tenía 3 pruebas (P1, P2, P3) [1].\""
+   ],
+   "seconds": 1.3,
+   "sources": [
+    "2026/TICS_312_000_26_CFuentes p16-29",
+    "2025/Clase_01 p12-22",
+    "2025/Clase_04 p62-64",
+    "2026/TICS_312_000_26_CFuentes p29-30",
+    "2025/Clase_01 p22-25",
+    "2026/TICS_312_003_F p100-104"
+   ]
+  },
+  {
+   "id": "q12",
+   "type": "factual",
+   "question": "¿En qué libro se basa el curso en 2026?",
+   "answer": "El curso en 2026 se basa en el libro \"Operating Systems: Three Easy Pieces\". [1]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1
+   ],
+   "warnings": [],
+   "seconds": 0.8,
+   "sources": [
+    "2026/TICS_312_000_26_CFuentes p16-29",
+    "2026/TICS_312_000_26_CFuentes p29-30",
+    "2026/TICS_312_Memoria_01 p28-35",
+    "2026/TICS_312_000_26_CFuentes p31-37",
+    "2026/TICS_312_003_F p70-76",
+    "2026/TICS_312_001_CF_26 p33-34"
+   ]
+  },
+  {
+   "id": "q13",
+   "type": "factual",
+   "question": "¿Qué es el efecto convoy en planificación de procesos?",
+   "answer": "El efecto convoy se refiere a la situación en la que el tiempo de turnaround empeora debido a la ejecución de procesos largos que bloquean a procesos más cortos, lo que resulta en un rendimiento inferior. Este fenómeno se conoce como el efecto convoy y se puede comparar con una situación real, como comprar unas papas fritas antes de que la familia compre para todo el mes en un supermercado [1]. En el contexto de planificación de procesos, cuando se eliminan supuestos como que todos los procesos tengan el mismo tiempo de ejecución, el efecto convoy se vuelve evidente, como en el ejemplo de FIFO donde el tiempo de turnaround aumenta de 20 a 50 segundos [2][3].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    3
+   ],
+   "warnings": [],
+   "seconds": 2.3,
+   "sources": [
+    "2026/TICS_312_003_F p28-33",
+    "2026/TICS_312_003_F p23-28",
+    "2025/Clase_04 p11-18",
+    "2025/Clase_02 p47-53",
+    "2025/Clase_04 p58-62",
+    "2026/TICS_312_003_F p54-58"
+   ]
+  },
+  {
+   "id": "q14",
+   "type": "factual",
+   "question": "¿Cuáles son los dos modos de operación del procesador que usa el sistema operativo para restringir a los procesos?",
+   "answer": "Los dos modos de operación del procesador que usa el sistema operativo para restringir a los procesos son: User Mode y Kernel Mode. [1][2]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2
+   ],
+   "warnings": [],
+   "seconds": 0.8,
+   "sources": [
+    "2026/TICS_312_003_F p1-8",
+    "2026/TICS_312_001_CF_26 p47-53",
+    "2025/Clase_01 p1-11",
+    "2026/TICS_312_Memoria_01 p28-35",
+    "2026/TICS_312_000_26_CFuentes p13-15",
+    "2025/Clase_08 p32-36"
+   ]
+  },
+  {
+   "id": "q15",
+   "type": "factual",
+   "question": "¿Qué es el ASID en una TLB?",
+   "answer": "El ASID (Address Space Identifier) es un campo en cada entrada de la TLB que indica a qué proceso corresponde la entrada de mapeo de direcciones. [1][2]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2
+   ],
+   "warnings": [],
+   "seconds": 0.9,
+   "sources": [
+    "2025/Clase_09 p22-32",
+    "2026/TICS_312_ch18_19 p22-32",
+    "2025/Clase_01 p22-25",
+    "2025/Clase_01 p1-11",
+    "2025/Clase_01 p33-40",
+    "2025/Clase_01 p40-49"
+   ]
+  },
+  {
+   "id": "q16",
+   "type": "factual",
+   "question": "¿Qué información contiene el superbloque de un sistema de archivos?",
+   "answer": "El superbloque contiene:  \n● Cantidad de bloques para inodos y para datos  \n● Donde comienza la tabla de inodos y la región de datos  \n● Identificación de tipo de sistemas de archivos (magic number) [1][2][4][5][6].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    4,
+    5,
+    6
+   ],
+   "warnings": [],
+   "seconds": 1.2,
+   "sources": [
+    "2026/TICS_312_011_26 p19-23",
+    "2025/Clase_12 p18-21",
+    "2025/Clase_12 p9-10",
+    "2025/Clase_12 p21-27",
+    "2026/TICS_312_011_26 p23-29",
+    "2025/Clase_12 p7-9"
+   ]
+  },
+  {
+   "id": "q17",
+   "type": "factual",
+   "question": "¿Qué es un hard link y qué pasa con el archivo al borrar una de las copias?",
+   "answer": "Un hard link crea un nuevo nodo en el directorio que tiene el mismo inodo que el original, y el archivo no es copiado [1]. Lo interesante de un hard link es que aumenta el número de referencias a un archivo [1]. Al borrar una de las copias, el archivo sigue vivo porque el número de referencias no se reduce a cero [1].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1
+   ],
+   "warnings": [],
+   "seconds": 1.4,
+   "sources": [
+    "2026/TICS_312_010_26 p47-56",
+    "2025/Clase_11 p53-60",
+    "2025/Clase_12 p10-14",
+    "2026/TICS_312_010_26 p38-42",
+    "2025/Clase_11 p44-48",
+    "2026/TICS_312_010_26 p42-47"
+   ]
+  },
+  {
+   "id": "q18",
+   "type": "factual",
+   "question": "Con reubicación dinámica (base y bounds), ¿cómo se obtiene la dirección física?",
+   "answer": "La dirección física se obtiene mediante la fórmula: Dirección Física = Dirección Virtual + base. Este cálculo se realiza con el apoyo del hardware, que verifica si la dirección física está dentro del rango definido por el registro bound [1][2][3]. Si no pertenece al rango, se produce un error señalando que se salió del límite [1][2][4].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "warnings": [],
+   "seconds": 1.5,
+   "sources": [
+    "2025/Clase_08 p26-32",
+    "2026/TICS_312_Memoria_01 p24-28",
+    "2025/Clase_08 p22-26",
+    "2026/TICS_312_Memoria_01 p28-35",
+    "2026/TICS_312_Memoria_01 p21-24",
+    "2026/TICS_312_Memoria_01 p35-38"
+   ]
+  },
+  {
+   "id": "q19",
+   "type": "factual",
+   "question": "¿Qué es la instrucción test-and-set y para qué se usa?",
+   "answer": "La instrucción test-and-set es una instrucción de CPU que realiza una operación atómica de prueba y establecimiento, donde compara el valor de una variable con uno esperado y, si es igual, la cambia a un nuevo valor. Se usa para implementar mecanismos de bloqueo (locks) que garantizan exclusión mutua, ya que no se interrumpe durante su ejecución [2][3]. Esta instrucción es fundamental en el soporte de hardware para locks como el spin lock [1][2].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    3
+   ],
+   "warnings": [],
+   "seconds": 1.8,
+   "sources": [
+    "2026/TICS_312_Lock_CF_26 p18-30",
+    "2025/Clase_06 p20-30",
+    "2025/Clase_06 p30-47",
+    "2025/Clase_01 p1-11",
+    "2025/Clase_10 p44-45",
+    "2025/Clase_11 p13-20"
+   ]
+  },
+  {
+   "id": "q20",
+   "type": "factual",
+   "question": "¿Qué es DMA (Direct Memory Access)?",
+   "answer": "DMA (Direct Memory Access) es un mecanismo en el que la CPU envía comandos al dispositivo y se apoya en el controlador de DMA, mientras que los datos se copian en el controlador de DMA, quien especifica al dispositivo los datos a usar. Los datos DEBEN permanecer en memoria hasta que se usen, ya que son una área no swappables. [1][2]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2
+   ],
+   "warnings": [],
+   "seconds": 1.5,
+   "sources": [
+    "2025/Clase_11 p13-20",
+    "2026/TICS_312_010_26 p13-21",
+    "2026/TICS_312_003_F p1-8",
+    "2026/TICS_312_001_CF_26 p47-53",
+    "2025/Clase_10 p14-18",
+    "2026/TICS_312_000_26_CFuentes p37-46"
+   ]
+  },
+  {
+   "id": "q21",
+   "type": "factual",
+   "question": "¿Qué es Meltdown según las presentaciones?",
+   "answer": "Meltdown es una vulnerabilidad en arquitecturas Intel que rompe el mecanismo que impide que las aplicaciones accedan a la memoria del sistema [1].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1
+   ],
+   "warnings": [],
+   "seconds": 1.0,
+   "sources": [
+    "2025/Clase_01 p33-40",
+    "2025/Clase_08 p19-21",
+    "2025/Clase_04 p44-50",
+    "2025/Clase_01 p40-49",
+    "2025/Clase_08 p15-19",
+    "2026/TICS_312_Memoria_01 p16-20"
+   ]
+  },
+  {
+   "id": "q22",
+   "type": "factual",
+   "question": "¿Cuáles son las reglas 1 y 2 de MLFQ?",
+   "answer": "Las reglas 1 y 2 de MLFQ son:  \nRegla 1: Si Prioridad(A) > Prioridad(B), A es ejecutado.  \nRegla 2: Si Prioridad(A) == Prioridad(B), A & B son ejecutados usando RR.  \n\n[1][2][3]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    3
+   ],
+   "warnings": [],
+   "seconds": 1.3,
+   "sources": [
+    "2025/Clase_04 p62-64",
+    "2025/Clase_04 p44-50",
+    "2026/TICS_312_003_F p70-76",
+    "2026/TICS_312_003_F p100-104",
+    "2025/Clase_04 p50-58",
+    "2025/Clase_04 p58-62"
+   ]
+  },
+  {
+   "id": "q23",
+   "type": "factual",
+   "question": "¿Qué es el priority boost en MLFQ?",
+   "answer": "El priority boost en MLFQ es una regla que, después de un período de tiempo S, mueve todos los trabajos en el sistema a la cola de mayor prioridad. [1][2][3][6]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    3,
+    6
+   ],
+   "warnings": [],
+   "seconds": 1.0,
+   "sources": [
+    "2026/TICS_312_003_F p92-101",
+    "2025/Clase_04 p58-62",
+    "2026/TICS_312_003_F p86-92",
+    "2025/Clase_04 p64-66",
+    "2026/TICS_312_003_F p70-76",
+    "2025/Clase_04 p62-64"
+   ]
+  },
+  {
+   "id": "q24",
+   "type": "factual",
+   "question": "¿Cómo se define el turnaround time?",
+   "answer": "El turnaround time se define como el tiempo en que se completa un proceso menos el tiempo en que arribó el proceso al sistema. [3]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    3
+   ],
+   "warnings": [],
+   "seconds": 0.9,
+   "sources": [
+    "2026/TICS_312_003_F p58-64",
+    "2025/Clase_04 p35-43",
+    "2025/Clase_04 p11-18",
+    "2026/TICS_312_003_F p33-39",
+    "2026/TICS_312_003_F p23-28",
+    "2025/Clase_04 p18-25"
+   ]
+  },
+  {
+   "id": "q25",
+   "type": "factual",
+   "question": "¿Qué estados de proceso define xv6?",
+   "answer": "Los estados de proceso que define XV6 son: UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, y ZOMBIE [4].  \nEstos estados están definidos en el archivo `proc.h` de XV6 [4].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    4
+   ],
+   "warnings": [],
+   "seconds": 1.0,
+   "sources": [
+    "2026/TICS_312_001_CF_26 p33-34",
+    "2025/Clase_02 p24-34",
+    "2026/TICS_312_001_CF_26 p24-33",
+    "2025/Clase_02 p34-37",
+    "2025/Clase_05 p7-8",
+    "2025/Clase_05 p1-7"
+   ]
+  },
+  {
+   "id": "q26",
+   "type": "factual",
+   "question": "¿Qué schedulers para múltiples CPUs se mencionan para Linux?",
+   "answer": "Los schedulers para múltiples CPUs que se mencionan para Linux son: O(1), Completely Fair Scheduler (CFS) y BF Scheduler [1][3].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    3
+   ],
+   "warnings": [],
+   "seconds": 0.8,
+   "sources": [
+    "2025/Clase_05 p60-62",
+    "2025/Clase_06 p1-9",
+    "2025/Clase_05 p51-60",
+    "2025/Clase_05 p43-51",
+    "2026/TICS_312_001_CF_26 p33-34",
+    "2025/Clase_03 p16-22"
+   ]
+  },
+  {
+   "id": "q27",
+   "type": "factual",
+   "question": "¿Qué son los inodos?",
+   "answer": "Los inodos son estructuras que contienen información metadatos de los archivos, como su tamaño, dueño, permisos, fecha de modificación y punteros a bloques de datos [1][2][6]. Están identificados por un número único que permite saber directamente la ubicación del archivo en el sistema de archivos [1][2][6]. Además, contienen campos como el modo de acceso, el dueño (uid), el grupo (gid), el contador de enlaces (link-count) y punteros a bloques de datos [6].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    6
+   ],
+   "warnings": [],
+   "seconds": 1.7,
+   "sources": [
+    "2025/Clase_12 p9-10",
+    "2026/TICS_312_011_26 p9-14",
+    "2025/Clase_12 p21-27",
+    "2026/TICS_312_011_26 p23-29",
+    "2026/TICS_312_011_26 p19-23",
+    "2025/Clase_12 p10-14"
+   ]
+  },
+  {
+   "id": "q28",
+   "type": "density",
+   "question": "¿Cambió la densidad de contenidos (palabras por slide) entre 2025 y 2026?",
+   "answer": "La densidad de contenidos (palabras por slide) no cambió entre 2025 y 2026, ya que en 2025 fue de 23.4 palabras por slide y en 2026 de 23.2 palabras por slide, un cambio de solo -1%, que se considera prácticamente sin cambio [M].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [],
+   "seconds": 1.6,
+   "sources": [
+    "2025/Clase_02 p47-53",
+    "2025/Clase_07 p32-36",
+    "2026/TICS_312_ch18_19 p1-10",
+    "2025/Clase_09 p1-10",
+    "2026/TICS_312_001_CF_26 p24-33",
+    "2026/TICS_312_003_F p104-106"
+   ]
+  },
+  {
+   "id": "q29",
+   "type": "density",
+   "question": "¿Qué temas se vieron en 2025 pero no aparecen en las presentaciones de 2026?",
+   "answer": "Los temas que se vieron en 2025 pero no aparecen en las presentaciones de 2026 son:  \n- Bugs de concurrencia: violación de atomicidad y de orden  \n- Laboratorio xv6 y git  \n- Políticas de reemplazo de páginas: óptima, FIFO, random, LRU, clock, thrashing  \n- Planificación multiprocesador: caché, afinidad, SQMS, MQMS  \n- Planificación proporcional: lottery y stride scheduling  \n- Semáforos, productor/consumidor y deadlocks  \n- Swap: espacio de intercambio, present bit, page fault  \n- Tablas de páginas más pequeñas: multinivel e invertidas  \n- Variables de condición y estructuras de datos concurrentes  \n\n[Cita del fragmento: \"temas sólo en 2025 (no aparecen en 2026)\"]",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [
+    "la respuesta no cita ningún fragmento: verificar manualmente"
+   ],
+   "seconds": 2.7,
+   "sources": [
+    "2026/TICS_312_000_26_CFuentes p16-29",
+    "2026/TICS_312_001_CF_26 p33-34",
+    "2026/TICS_312_000_26_CFuentes p29-30",
+    "2025/Clase_05 p7-8",
+    "2025/Clase_01 p1-11",
+    "2025/Clase_12 p9-10"
+   ]
+  },
+  {
+   "id": "q30",
+   "type": "density",
+   "question": "¿Cuántas slides únicas tiene el material de 2025 y cuántas el de 2026?",
+   "answer": "El material de 2025 tiene 567 slides únicas [M]. El material de 2026 tiene 414 slides únicas [M].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [],
+   "seconds": 1.1,
+   "sources": [
+    "2025/Clase_04 p62-64",
+    "2025/Clase_04 p64-66",
+    "2025/Clase_04 p58-62",
+    "2026/TICS_312_003_F p100-104",
+    "2026/TICS_312_003_F p92-101",
+    "2026/TICS_312_Lock_CF_26 p1-7"
+   ]
+  },
+  {
+   "id": "q31",
+   "type": "density",
+   "question": "¿Cómo cambió la cantidad de slides del tema MLFQ entre 2025 y 2026?",
+   "answer": "El tema \"Planificación: Multi-Level Feedback Queue (MLFQ)\" tuvo 21 slides en 2025 y 31 slides en 2026 [1][4][5].  \nPor lo tanto, aumentó en 10 slides [1][4][5].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    4,
+    5
+   ],
+   "warnings": [
+    "respuesta parcial: el modelo indicó que parte de lo pedido no está en las presentaciones",
+    "números no presentes en el contexto (posible alucinación): ['10']"
+   ],
+   "seconds": 1.3,
+   "sources": [
+    "2025/Clase_04 p64-66",
+    "2026/TICS_312_003_F p104-106",
+    "2026/TICS_312_003_F p70-76",
+    "2025/Clase_04 p62-64",
+    "2025/Clase_04 p50-58",
+    "2026/TICS_312_003_F p100-104"
+   ]
+  },
+  {
+   "id": "q32",
+   "type": "unanswerable",
+   "question": "¿Qué es RAID 5 y cómo se explica en el curso?",
+   "answer": "No encontré esa información en las presentaciones del ramo.",
+   "correct": true,
+   "coverage": null,
+   "abstained": true,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [],
+   "seconds": 0.6,
+   "sources": [
+    "2026/TICS_312_000_26_CFuentes p16-29",
+    "2025/Clase_01 p12-22",
+    "2026/TICS_312_000_26_CFuentes p29-30",
+    "2025/Clase_01 p22-25",
+    "2026/TICS_312_003_F p50-54",
+    "2025/Clase_01 p33-40"
+   ]
+  },
+  {
+   "id": "q33",
+   "type": "unanswerable",
+   "question": "¿Cuál es la receta del pastel de choclo?",
+   "answer": "No encontré esa información en las presentaciones del ramo.",
+   "correct": true,
+   "coverage": null,
+   "abstained": true,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [],
+   "seconds": 0.7,
+   "sources": [
+    "2025/Clase_02 p10-14",
+    "2026/TICS_312_001_CF_26 p11-15",
+    "2025/Clase_05 p1-7",
+    "2025/Clase_01 p22-25",
+    "2025/Clase_01 p26-33",
+    "2025/Clase_01 p33-40"
+   ]
+  },
+  {
+   "id": "q34",
+   "type": "unanswerable",
+   "question": "¿Cómo se explica el algoritmo del banquero para evitar deadlocks?",
+   "answer": "No encontré esa información en las presentaciones del ramo.",
+   "correct": true,
+   "coverage": null,
+   "abstained": true,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [],
+   "seconds": 0.7,
+   "sources": [
+    "2025/Clase_07 p22-31",
+    "2026/TICS_312_003_F p50-54",
+    "2025/Clase_10 p11-13",
+    "2025/Clase_10 p1-11",
+    "2025/Clase_07 p1-8",
+    "2025/Clase_10 p42-42"
+   ]
+  },
+  {
+   "id": "q35",
+   "type": "unanswerable",
+   "question": "¿Cuál fue el porcentaje de aprobación del ramo en 2025?",
+   "answer": "No encontré esa información en las presentaciones del ramo.",
+   "correct": true,
+   "coverage": null,
+   "abstained": true,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [],
+   "seconds": 0.6,
+   "sources": [
+    "2025/Clase_05 p9-15",
+    "2025/Clase_05 p7-8",
+    "2025/Clase_01 p1-11",
+    "2025/Clase_12 p9-10",
+    "2025/Clase_04 p1-11",
+    "2025/Clase_12 p7-9"
+   ]
+  },
+  {
+   "id": "q36",
+   "type": "unanswerable",
+   "question": "¿Qué es journaling en sistemas de archivos según las presentaciones?",
+   "answer": "No encontré esa información en las presentaciones del ramo.",
+   "correct": true,
+   "coverage": null,
+   "abstained": true,
+   "retrieved_gold": null,
+   "cited": [],
+   "warnings": [],
+   "seconds": 0.7,
+   "sources": [
+    "2025/Clase_12 p1-7",
+    "2025/Clase_12 p7-9",
+    "2026/TICS_312_011_26 p1-7",
+    "2026/TICS_312_011_26 p7-9",
+    "2025/Clase_12 p9-10",
+    "2026/TICS_312_011_26 p19-23"
+   ]
+  },
+  {
+   "id": "q37",
+   "type": "paraphrase",
+   "question": "¿Por qué empeora el tiempo promedio de término cuando un trabajo muy largo llega primero a una cola atendida por orden de llegada?",
+   "answer": "Porque cuando un trabajo muy largo llega primero, bloquea a los demás procesos que llegan después, lo que causa el efecto convoy, donde los procesos más cortos deben esperar hasta que el largo proceso termine, aumentando así el tiempo de término promedio [6]. Este fenómeno se observa en sistemas que usan FIFO (First-In First-Out) cuando los tiempos de ejecución no son iguales [6].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    6
+   ],
+   "warnings": [],
+   "seconds": 1.5,
+   "sources": [
+    "2025/Clase_05 p1-7",
+    "2025/Clase_04 p62-64",
+    "2026/TICS_312_003_F p100-104",
+    "2026/TICS_312_003_F p39-46",
+    "2025/Clase_04 p18-25",
+    "2025/Clase_04 p11-18"
+   ]
+  },
+  {
+   "id": "q38",
+   "type": "paraphrase",
+   "question": "¿Qué estructura ubicada al inicio del disco permite saber dónde comienza la tabla de inodos al montar el disco?",
+   "answer": "La estructura ubicada al inicio del disco que permite saber dónde comienza la tabla de inodos es el SuperBloque [1][2][3][4]. El SuperBloque contiene la información de dónde comienza la tabla de inodos y la región de datos [1][2][3][4].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "warnings": [],
+   "seconds": 1.3,
+   "sources": [
+    "2025/Clase_12 p21-27",
+    "2026/TICS_312_011_26 p23-29",
+    "2025/Clase_12 p18-21",
+    "2026/TICS_312_011_26 p19-23",
+    "2026/TICS_312_011_26 p7-9",
+    "2025/Clase_10 p1-11"
+   ]
+  },
+  {
+   "id": "q39",
+   "type": "paraphrase",
+   "question": "¿Cómo recupera el sistema operativo el control de la CPU si un programa nunca la cede?",
+   "answer": "El sistema operativo recupera el control de la CPU mediante una interrupción por timeout, específicamente mediante un timer interrupt, que permite realizar un context switch cuando un programa no cede el control [2]. Este mecanismo se activa cuando el timer termina, lo que desencadena una interrupción y permite que el SO pase el control a otro proceso [2]. La CPU es programada para que, al final de un intervalo de tiempo, se ejecute una interrupción que inicie el cambio de contexto [2]. Este proceso asegura que el sistema operativo pueda recuperar el control incluso si un programa no desea salir [2].",
+   "correct": true,
+   "coverage": 1.0,
+   "abstained": false,
+   "retrieved_gold": true,
+   "cited": [
+    2
+   ],
+   "warnings": [
+    "bajo respaldo léxico (30%) en: \"La CPU es programada para que, al final de un intervalo de tiempo, se ejecute una interrup\""
+   ],
+   "seconds": 1.8,
+   "sources": [
+    "2026/TICS_312_000_26_CFuentes p1-13",
+    "2025/Clase_03 p34-39",
+    "2026/TICS_312_000_26_CFuentes p13-15",
+    "2026/TICS_312_000_26_CFuentes p29-30",
+    "2026/TICS_312_000_26_CFuentes p31-37",
+    "2025/Clase_02 p1-10"
+   ]
+  },
+  {
+   "id": "q40",
+   "type": "paraphrase",
+   "question": "¿Qué componente de hardware guarda las traducciones de páginas usadas recientemente para no consultar siempre la tabla?",
+   "answer": "No encontré esa información en las presentaciones del ramo.",
+   "correct": false,
+   "coverage": 0.0,
+   "abstained": true,
+   "retrieved_gold": false,
+   "cited": [],
+   "warnings": [],
+   "seconds": 0.6,
+   "sources": [
+    "2025/Clase_09 p20-21",
+    "2026/TICS_312_ch18_19 p19-21",
+    "2025/Clase_09 p10-16",
+    "2026/TICS_312_ch18_19 p10-19",
+    "2025/Clase_09 p42-50",
+    "2025/Clase_09 p50-61"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,5 @@
+.venv/
+__pycache__/
+*.pyc
+# índice regenerable con `python -m minirag index` (chunks + embeddings)
+index/

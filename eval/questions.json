@@ -1,0 +1,687 @@
+{
+ "_comment": "Set de evaluación. gold_docs: documentos (doc_id) que contienen la respuesta; basta recuperar uno, salvo require_all_gold=true (preguntas comparativas: deben recuperarse ambos años). must_include: lista de grupos de hechos clave; cada grupo es una lista de alternativas (sin tildes, minúsculas). Una respuesta es correcta si cubre TODOS los grupos. type=unanswerable: la información NO está en las presentaciones; lo correcto es abstenerse. Todos los hechos fueron verificados contra el texto de las slides (ver comentario 'src').",
+ "questions": [
+  {
+   "id": "q01",
+   "type": "factual",
+   "question": "¿Cómo se calcula el stride (paso) de un proceso en stride scheduling?",
+   "gold_docs": [
+    "2025:Clase_05:sched_proporcional"
+   ],
+   "must_include": [
+    [
+     "numero grande",
+     "10,000",
+     "10.000",
+     "10000"
+    ],
+    [
+     "ticket"
+    ]
+   ],
+   "src": "2025 Clase_05 p35"
+  },
+  {
+   "id": "q02",
+   "type": "factual",
+   "question": "En el ejemplo de stride scheduling con procesos A, B y C de 100, 50 y 250 tickets, ¿cuáles son sus strides?",
+   "gold_docs": [
+    "2025:Clase_05:sched_proporcional"
+   ],
+   "must_include": [
+    [
+     "100"
+    ],
+    [
+     "200"
+    ],
+    [
+     "40"
+    ]
+   ],
+   "src": "2025 Clase_05 p37"
+  },
+  {
+   "id": "q03",
+   "type": "factual",
+   "question": "¿Qué es un semáforo y qué funciones POSIX se usan para manipularlo?",
+   "gold_docs": [
+    "2025:Clase_07:semaforos"
+   ],
+   "must_include": [
+    [
+     "entero"
+    ],
+    [
+     "sem_wait"
+    ],
+    [
+     "sem_post"
+    ]
+   ],
+   "src": "2025 Clase_07 p7"
+  },
+  {
+   "id": "q04",
+   "type": "factual",
+   "question": "¿Qué condiciones deben cumplir el productor y el consumidor en el problema productor/consumidor?",
+   "gold_docs": [
+    "2025:Clase_07:semaforos"
+   ],
+   "must_include": [
+    [
+     "buffer"
+    ],
+    [
+     "esperar",
+     "espera"
+    ]
+   ],
+   "src": "2025 Clase_07 p22"
+  },
+  {
+   "id": "q05",
+   "type": "factual",
+   "question": "¿Qué es un bug de violación de atomicidad?",
+   "gold_docs": [
+    "2025:Clase_07:bugs_concurrencia"
+   ],
+   "must_include": [
+    [
+     "atomica",
+     "atomicidad",
+     "serializabilidad"
+    ]
+   ],
+   "src": "2025 Clase_07 p33"
+  },
+  {
+   "id": "q06",
+   "type": "factual",
+   "question": "¿Qué indica el present bit de una página?",
+   "gold_docs": [
+    "2025:Clase_10:swap",
+    "2025:Clase_09:paginacion",
+    "2026:TICS_312_ch18_19:paginacion"
+   ],
+   "must_include": [
+    [
+     "memoria"
+    ],
+    [
+     "disco"
+    ]
+   ],
+   "src": "2025 Clase_10 p8; Clase_09 p20; 2026 ch18_19 p20"
+  },
+  {
+   "id": "q07",
+   "type": "factual",
+   "question": "¿En qué consiste la política óptima de reemplazo de páginas y por qué no se usa en la práctica?",
+   "gold_docs": [
+    "2025:Clase_10:reemplazo_paginas"
+   ],
+   "must_include": [
+    [
+     "futuro"
+    ],
+    [
+     "no es posible",
+     "imposible",
+     "no se puede"
+    ]
+   ],
+   "src": "2025 Clase_10 p17,p19"
+  },
+  {
+   "id": "q08",
+   "type": "factual",
+   "question": "¿Qué hace el sistema operativo cuando ocurre thrashing?",
+   "gold_docs": [
+    "2025:Clase_10:reemplazo_paginas"
+   ],
+   "must_include": [
+    [
+     "subset",
+     "subconjunto",
+     "no ejecutar",
+     "deja de ejecutar"
+    ]
+   ],
+   "src": "2025 Clase_10 p40"
+  },
+  {
+   "id": "q09",
+   "type": "factual",
+   "question": "¿Qué características tiene un sistema operativo monolítico?",
+   "gold_docs": [
+    "2025:Clase_01:estructura_so"
+   ],
+   "must_include": [
+    [
+     "drivers",
+     "servicios"
+    ],
+    [
+     "dificil de mantener",
+     "pesado"
+    ]
+   ],
+   "src": "2025 Clase_01 p45"
+  },
+  {
+   "id": "q10",
+   "type": "factual",
+   "question": "¿Cómo funciona un two-phase lock?",
+   "gold_docs": [
+    "2025:Clase_06:variables_condicion",
+    "2026:TICS_312_Lock_CF_26:locks"
+   ],
+   "must_include": [
+    [
+     "busy waiting",
+     "busy-waiting",
+     "espera activa"
+    ],
+    [
+     "dormir",
+     "duerme"
+    ]
+   ],
+   "src": "2025 Clase_06 p56-58; 2026 Lock p38"
+  },
+  {
+   "id": "q11",
+   "type": "comparative",
+   "question": "¿Cuántas pruebas tenía el curso en 2025 y cuántas en 2026?",
+   "gold_docs": [
+    "2025:Clase_01:curso_admin",
+    "2026:TICS_312_000_26_CFuentes:curso_admin"
+   ],
+   "require_all_gold": true,
+   "must_include": [
+    [
+     "2 pruebas",
+     "dos pruebas",
+     "p1 y p2"
+    ],
+    [
+     "3 pruebas",
+     "tres pruebas",
+     "p3"
+    ]
+   ],
+   "src": "2025 Clase_01 p16; 2026 000 p21"
+  },
+  {
+   "id": "q12",
+   "type": "factual",
+   "question": "¿En qué libro se basa el curso en 2026?",
+   "gold_docs": [
+    "2026:TICS_312_000_26_CFuentes:curso_admin",
+    "2026:TICS_312_000_26_CFuentes:estructura_so"
+   ],
+   "must_include": [
+    [
+     "three easy pieces",
+     "ostep"
+    ]
+   ],
+   "src": "2026 000 p26"
+  },
+  {
+   "id": "q13",
+   "type": "factual",
+   "question": "¿Qué es el efecto convoy en planificación de procesos?",
+   "gold_docs": [
+    "2025:Clase_04:sched_basico",
+    "2026:TICS_312_003_F:sched_basico"
+   ],
+   "must_include": [
+    [
+     "turnaround"
+    ]
+   ],
+   "src": "2025 Clase_04 p16; 2026 003_F p27-29"
+  },
+  {
+   "id": "q14",
+   "type": "factual",
+   "question": "¿Cuáles son los dos modos de operación del procesador que usa el sistema operativo para restringir a los procesos?",
+   "gold_docs": [
+    "2026:TICS_312_001_CF_26:lde",
+    "2026:TICS_312_003_F:lde",
+    "2025:Clase_01:estructura_so",
+    "2026:TICS_312_000_26_CFuentes:estructura_so",
+    "2025:Clase_03:lde"
+   ],
+   "must_include": [
+    [
+     "user",
+     "usuario"
+    ],
+    [
+     "kernel"
+    ]
+   ],
+   "src": "2026 001 p50; 2025 Clase_01 p36"
+  },
+  {
+   "id": "q15",
+   "type": "factual",
+   "question": "¿Qué es el ASID en una TLB?",
+   "gold_docs": [
+    "2025:Clase_09:tlb",
+    "2026:TICS_312_ch18_19:tlb"
+   ],
+   "must_include": [
+    [
+     "address space identifier",
+     "identificador"
+    ]
+   ],
+   "src": "2025 Clase_09 p28; 2026 ch18_19 p28"
+  },
+  {
+   "id": "q16",
+   "type": "factual",
+   "question": "¿Qué información contiene el superbloque de un sistema de archivos?",
+   "gold_docs": [
+    "2025:Clase_12:fs_implementacion",
+    "2026:TICS_312_011_26:fs_implementacion"
+   ],
+   "must_include": [
+    [
+     "inodo"
+    ],
+    [
+     "magic number",
+     "tipo de sistema"
+    ]
+   ],
+   "src": "2025 Clase_12 p21"
+  },
+  {
+   "id": "q17",
+   "type": "factual",
+   "question": "¿Qué es un hard link y qué pasa con el archivo al borrar una de las copias?",
+   "gold_docs": [
+    "2025:Clase_11:fs_api",
+    "2026:TICS_312_010_26:fs_api"
+   ],
+   "must_include": [
+    [
+     "mismo inodo"
+    ],
+    [
+     "sigue",
+     "referencia"
+    ]
+   ],
+   "src": "2025 Clase_11 p55-56; 2026 010 p50"
+  },
+  {
+   "id": "q18",
+   "type": "factual",
+   "question": "Con reubicación dinámica (base y bounds), ¿cómo se obtiene la dirección física?",
+   "gold_docs": [
+    "2025:Clase_08:traduccion_direcciones",
+    "2026:TICS_312_Memoria_01:traduccion_direcciones"
+   ],
+   "must_include": [
+    [
+     "base"
+    ],
+    [
+     "virtual"
+    ]
+   ],
+   "src": "2025 Clase_08 p27; 2026 Memoria_01 p27"
+  },
+  {
+   "id": "q19",
+   "type": "factual",
+   "question": "¿Qué es la instrucción test-and-set y para qué se usa?",
+   "gold_docs": [
+    "2025:Clase_06:locks",
+    "2026:TICS_312_Lock_CF_26:locks"
+   ],
+   "must_include": [
+    [
+     "atomic",
+     "atomica"
+    ],
+    [
+     "lock",
+     "bloqueo",
+     "exclusion mutua"
+    ]
+   ],
+   "src": "2025 Clase_06 p30; 2026 Lock p20-21"
+  },
+  {
+   "id": "q20",
+   "type": "factual",
+   "question": "¿Qué es DMA (Direct Memory Access)?",
+   "gold_docs": [
+    "2025:Clase_11:dispositivos_io",
+    "2026:TICS_312_010_26:dispositivos_io"
+   ],
+   "must_include": [
+    [
+     "controlador"
+    ],
+    [
+     "memoria"
+    ]
+   ],
+   "src": "2025 Clase_11 p18; 2026 010 p19"
+  },
+  {
+   "id": "q21",
+   "type": "factual",
+   "question": "¿Qué es Meltdown según las presentaciones?",
+   "gold_docs": [
+    "2025:Clase_01:estructura_so"
+   ],
+   "must_include": [
+    [
+     "intel"
+    ],
+    [
+     "memoria"
+    ]
+   ],
+   "src": "2025 Clase_01 p38"
+  },
+  {
+   "id": "q22",
+   "type": "factual",
+   "question": "¿Cuáles son las reglas 1 y 2 de MLFQ?",
+   "gold_docs": [
+    "2025:Clase_04:mlfq",
+    "2026:TICS_312_003_F:mlfq"
+   ],
+   "must_include": [
+    [
+     "prioridad"
+    ],
+    [
+     "rr",
+     "round robin"
+    ]
+   ],
+   "src": "2025 Clase_04 p46"
+  },
+  {
+   "id": "q23",
+   "type": "factual",
+   "question": "¿Qué es el priority boost en MLFQ?",
+   "gold_docs": [
+    "2025:Clase_04:mlfq",
+    "2026:TICS_312_003_F:mlfq"
+   ],
+   "must_include": [
+    [
+     "mayor prioridad",
+     "prioridad mas alta",
+     "mas alta prioridad"
+    ],
+    [
+     "periodo",
+     "tiempo s"
+    ]
+   ],
+   "src": "2026 003_F p92"
+  },
+  {
+   "id": "q24",
+   "type": "factual",
+   "question": "¿Cómo se define el turnaround time?",
+   "gold_docs": [
+    "2025:Clase_04:sched_basico",
+    "2026:TICS_312_003_F:sched_basico"
+   ],
+   "must_include": [
+    [
+     "completion",
+     "completa"
+    ],
+    [
+     "arrival",
+     "arrib",
+     "llega"
+    ]
+   ],
+   "src": "2025 Clase_04 p11"
+  },
+  {
+   "id": "q25",
+   "type": "factual",
+   "question": "¿Qué estados de proceso define xv6?",
+   "gold_docs": [
+    "2025:Clase_02:procesos"
+   ],
+   "must_include": [
+    [
+     "zombie"
+    ],
+    [
+     "runnable"
+    ],
+    [
+     "sleeping"
+    ]
+   ],
+   "src": "2025 Clase_02 p35"
+  },
+  {
+   "id": "q26",
+   "type": "factual",
+   "question": "¿Qué schedulers para múltiples CPUs se mencionan para Linux?",
+   "gold_docs": [
+    "2025:Clase_05:sched_multiprocesador"
+   ],
+   "must_include": [
+    [
+     "o(1)"
+    ],
+    [
+     "cfs",
+     "completely fair"
+    ]
+   ],
+   "src": "2025 Clase_05 p60"
+  },
+  {
+   "id": "q27",
+   "type": "factual",
+   "question": "¿Qué son los inodos?",
+   "gold_docs": [
+    "2025:Clase_12:fs_implementacion",
+    "2026:TICS_312_011_26:fs_implementacion"
+   ],
+   "must_include": [
+    [
+     "metadata",
+     "metadatos",
+     "informacion de los archivos"
+    ],
+    [
+     "numero"
+    ]
+   ],
+   "src": "2025 Clase_12 p10"
+  },
+  {
+   "id": "q28",
+   "type": "density",
+   "question": "¿Cambió la densidad de contenidos (palabras por slide) entre 2025 y 2026?",
+   "gold_docs": [],
+   "must_include": [
+    [
+     "23.4",
+     "23,4"
+    ],
+    [
+     "23.2",
+     "23,2"
+    ]
+   ],
+   "src": "results/densidad.json"
+  },
+  {
+   "id": "q29",
+   "type": "density",
+   "question": "¿Qué temas se vieron en 2025 pero no aparecen en las presentaciones de 2026?",
+   "gold_docs": [],
+   "must_include": [
+    [
+     "semaforo"
+    ],
+    [
+     "swap"
+    ]
+   ],
+   "src": "results/densidad.json coverage.solo_2025"
+  },
+  {
+   "id": "q30",
+   "type": "density",
+   "question": "¿Cuántas slides únicas tiene el material de 2025 y cuántas el de 2026?",
+   "gold_docs": [],
+   "must_include": [
+    [
+     "567"
+    ],
+    [
+     "414"
+    ]
+   ],
+   "src": "results/densidad.json years.*.slides"
+  },
+  {
+   "id": "q31",
+   "type": "density",
+   "question": "¿Cómo cambió la cantidad de slides del tema MLFQ entre 2025 y 2026?",
+   "gold_docs": [
+    "2025:Clase_04:mlfq",
+    "2026:TICS_312_003_F:mlfq"
+   ],
+   "require_all_gold": true,
+   "must_include": [
+    [
+     "21"
+    ],
+    [
+     "31"
+    ]
+   ],
+   "src": "results/densidad.json topics.mlfq"
+  },
+  {
+   "id": "q32",
+   "type": "unanswerable",
+   "question": "¿Qué es RAID 5 y cómo se explica en el curso?",
+   "gold_docs": [],
+   "must_include": [],
+   "src": "'raid' no aparece en el corpus"
+  },
+  {
+   "id": "q33",
+   "type": "unanswerable",
+   "question": "¿Cuál es la receta del pastel de choclo?",
+   "gold_docs": [],
+   "must_include": [],
+   "src": "fuera de dominio"
+  },
+  {
+   "id": "q34",
+   "type": "unanswerable",
+   "question": "¿Cómo se explica el algoritmo del banquero para evitar deadlocks?",
+   "gold_docs": [],
+   "must_include": [],
+   "src": "'banquero' no aparece en el corpus"
+  },
+  {
+   "id": "q35",
+   "type": "unanswerable",
+   "question": "¿Cuál fue el porcentaje de aprobación del ramo en 2025?",
+   "gold_docs": [],
+   "must_include": [],
+   "src": "no hay datos de aprobación"
+  },
+  {
+   "id": "q36",
+   "type": "unanswerable",
+   "question": "¿Qué es journaling en sistemas de archivos según las presentaciones?",
+   "gold_docs": [],
+   "must_include": [],
+   "src": "'journal' no aparece en el corpus"
+  },
+  {
+   "id": "q37",
+   "type": "paraphrase",
+   "question": "¿Por qué empeora el tiempo promedio de término cuando un trabajo muy largo llega primero a una cola atendida por orden de llegada?",
+   "gold_docs": [
+    "2025:Clase_04:sched_basico",
+    "2026:TICS_312_003_F:sched_basico"
+   ],
+   "must_include": [
+    [
+     "convoy"
+    ]
+   ],
+   "src": "efecto convoy, 2025 Clase_04 p16"
+  },
+  {
+   "id": "q38",
+   "type": "paraphrase",
+   "question": "¿Qué estructura ubicada al inicio del disco permite saber dónde comienza la tabla de inodos al montar el disco?",
+   "gold_docs": [
+    "2025:Clase_12:fs_implementacion",
+    "2026:TICS_312_011_26:fs_implementacion"
+   ],
+   "must_include": [
+    [
+     "superbloque",
+     "superblock"
+    ]
+   ],
+   "src": "2025 Clase_12 p21-22"
+  },
+  {
+   "id": "q39",
+   "type": "paraphrase",
+   "question": "¿Cómo recupera el sistema operativo el control de la CPU si un programa nunca la cede?",
+   "gold_docs": [
+    "2026:TICS_312_001_CF_26:lde",
+    "2026:TICS_312_003_F:lde",
+    "2025:Clase_03:lde"
+   ],
+   "must_include": [
+    [
+     "timer",
+     "timeout"
+    ]
+   ],
+   "src": "2026 001 p54; 2025 Clase_03 p35"
+  },
+  {
+   "id": "q40",
+   "type": "paraphrase",
+   "question": "¿Qué componente de hardware guarda las traducciones de páginas usadas recientemente para no consultar siempre la tabla?",
+   "gold_docs": [
+    "2025:Clase_09:tlb",
+    "2026:TICS_312_ch18_19:tlb"
+   ],
+   "must_include": [
+    [
+     "tlb",
+     "translation lookaside"
+    ]
+   ],
+   "src": "2025 Clase_09 p22"
+  }
+ ]
+}
