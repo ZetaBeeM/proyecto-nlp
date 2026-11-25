@@ -1,5 +1,5 @@
 {
-  "_comment": "Segmentación manual de cada deck en secciones temáticas [topic, pag_inicio, pag_fin] (1-based, contiguas, cubren todo el PDF). Cada sección es un 'documento' del Mini-RAG. Los límites se fijaron leyendo los títulos de slide (python -m minirag titles <año> <deck>). Taxonomía alineada a los capítulos de OSTEP para poder comparar temas entre años.",
+  "_comment": "Segmentación manual de cada deck en secciones temáticas [topic, pag_inicio, pag_fin] (1-based, contiguas, cubren todo el PDF). Cada sección es un 'documento' del Mini-RAG. Los límites se fijaron leyendo los títulos de slide (python -m minirag titles <año> <deck>). Taxonomía alineada a los capítulos de OSTEP para poder comparar temas entre años. Las entradas que no son slides usan la forma {kind, sections}: kind = programa | evaluacion | repaso | tarea (ver minirag/ingest.py). En Markdown cada 'página' es un bloque (python -m minirag titles <año> <archivo>).",
   "labels": {
     "intro_so": "Introducción: qué es un sistema operativo",
     "curso_admin": "Información del curso (programa, evaluaciones, requisitos)",
@@ -27,36 +27,480 @@
     "reemplazo_paginas": "Políticas de reemplazo de páginas: óptima, FIFO, random, LRU, clock, thrashing",
     "dispositivos_io": "Dispositivos de entrada/salida: polling, interrupciones, DMA, drivers",
     "fs_api": "Archivos y directorios: abstracciones y operaciones POSIX, links",
-    "fs_implementacion": "Implementación de un sistema de archivos: inodos, bitmaps, superbloque, caching"
+    "fs_implementacion": "Implementación de un sistema de archivos: inodos, bitmaps, superbloque, caching",
+    "eval_conceptos": "Preguntas de alternativas y de opinión: conceptos generales del curso"
   },
   "units": {
-    "Introducción": ["intro_so", "curso_admin", "estructura_so"],
-    "Virtualización de CPU": ["procesos", "api_procesos", "lde", "lab_xv6", "sched_basico", "mlfq", "sched_proporcional", "sched_multiprocesador"],
-    "Concurrencia": ["threads", "locks", "variables_condicion", "semaforos", "bugs_concurrencia"],
-    "Virtualización de memoria": ["espacio_direcciones", "traduccion_direcciones", "segmentacion", "paginacion", "tlb", "tablas_multinivel", "swap", "reemplazo_paginas"],
-    "Persistencia": ["dispositivos_io", "fs_api", "fs_implementacion"]
+    "Introducción": [
+      "intro_so",
+      "curso_admin",
+      "estructura_so"
+    ],
+    "Virtualización de CPU": [
+      "procesos",
+      "api_procesos",
+      "lde",
+      "lab_xv6",
+      "sched_basico",
+      "mlfq",
+      "sched_proporcional",
+      "sched_multiprocesador"
+    ],
+    "Concurrencia": [
+      "threads",
+      "locks",
+      "variables_condicion",
+      "semaforos",
+      "bugs_concurrencia"
+    ],
+    "Virtualización de memoria": [
+      "espacio_direcciones",
+      "traduccion_direcciones",
+      "segmentacion",
+      "paginacion",
+      "tlb",
+      "tablas_multinivel",
+      "swap",
+      "reemplazo_paginas"
+    ],
+    "Persistencia": [
+      "dispositivos_io",
+      "fs_api",
+      "fs_implementacion"
+    ],
+    "Transversal (evaluaciones)": [
+      "eval_conceptos"
+    ]
   },
   "decks": {
-    "2025/Clase_01": [["intro_so", 1, 11], ["curso_admin", 12, 25], ["estructura_so", 26, 49]],
-    "2025/Clase_02": [["procesos", 1, 38], ["lab_xv6", 39, 53]],
-    "2025/Clase_03": [["api_procesos", 1, 15], ["lde", 16, 45]],
-    "2025/Clase_04": [["sched_basico", 1, 43], ["mlfq", 44, 66]],
-    "2025/Clase_05": [["lab_xv6", 1, 8], ["sched_proporcional", 9, 42], ["sched_multiprocesador", 43, 62]],
-    "2025/Clase_06": [["threads", 1, 19], ["locks", 20, 50], ["variables_condicion", 51, 59]],
-    "2025/Clase_07": [["semaforos", 1, 31], ["bugs_concurrencia", 32, 36]],
-    "2025/Clase_08": [["espacio_direcciones", 1, 21], ["traduccion_direcciones", 22, 36], ["segmentacion", 37, 56]],
-    "2025/Clase_09": [["paginacion", 1, 21], ["tlb", 22, 32], ["tablas_multinivel", 33, 61]],
-    "2025/Clase_10": [["swap", 1, 13], ["reemplazo_paginas", 14, 45]],
-    "2025/Clase_11": [["dispositivos_io", 1, 29], ["fs_api", 30, 60]],
-    "2025/Clase_12": [["fs_implementacion", 1, 39]],
-    "2026/TICS_312_000_26_CFuentes": [["intro_so", 1, 15], ["curso_admin", 16, 30], ["estructura_so", 31, 52]],
-    "2026/TICS_312_001_CF_26": [["procesos", 1, 34], ["api_procesos", 35, 46], ["lde", 47, 59]],
-    "2026/TICS_312_003_F": [["lde", 1, 12], ["sched_basico", 13, 69], ["mlfq", 70, 106]],
-    "2026/TICS_312_Threads_Intro_CF": [["threads", 1, 27]],
-    "2026/TICS_312_Lock_CF_26": [["threads", 1, 9], ["locks", 10, 44]],
-    "2026/TICS_312_Memoria_01": [["espacio_direcciones", 1, 20], ["traduccion_direcciones", 21, 38], ["segmentacion", 39, 60]],
-    "2026/TICS_312_ch18_19": [["paginacion", 1, 21], ["tlb", 22, 32]],
-    "2026/TICS_312_010_26": [["dispositivos_io", 1, 27], ["fs_api", 28, 56]],
-    "2026/TICS_312_011_26": [["fs_implementacion", 1, 41]]
+    "2025/Clase_01": [
+      [
+        "intro_so",
+        1,
+        11
+      ],
+      [
+        "curso_admin",
+        12,
+        25
+      ],
+      [
+        "estructura_so",
+        26,
+        49
+      ]
+    ],
+    "2025/Clase_02": [
+      [
+        "procesos",
+        1,
+        38
+      ],
+      [
+        "lab_xv6",
+        39,
+        53
+      ]
+    ],
+    "2025/Clase_03": [
+      [
+        "api_procesos",
+        1,
+        15
+      ],
+      [
+        "lde",
+        16,
+        45
+      ]
+    ],
+    "2025/Clase_04": [
+      [
+        "sched_basico",
+        1,
+        43
+      ],
+      [
+        "mlfq",
+        44,
+        66
+      ]
+    ],
+    "2025/Clase_05": [
+      [
+        "lab_xv6",
+        1,
+        8
+      ],
+      [
+        "sched_proporcional",
+        9,
+        42
+      ],
+      [
+        "sched_multiprocesador",
+        43,
+        62
+      ]
+    ],
+    "2025/Clase_06": [
+      [
+        "threads",
+        1,
+        19
+      ],
+      [
+        "locks",
+        20,
+        50
+      ],
+      [
+        "variables_condicion",
+        51,
+        59
+      ]
+    ],
+    "2025/Clase_07": [
+      [
+        "semaforos",
+        1,
+        31
+      ],
+      [
+        "bugs_concurrencia",
+        32,
+        36
+      ]
+    ],
+    "2025/Clase_08": [
+      [
+        "espacio_direcciones",
+        1,
+        21
+      ],
+      [
+        "traduccion_direcciones",
+        22,
+        36
+      ],
+      [
+        "segmentacion",
+        37,
+        56
+      ]
+    ],
+    "2025/Clase_09": [
+      [
+        "paginacion",
+        1,
+        21
+      ],
+      [
+        "tlb",
+        22,
+        32
+      ],
+      [
+        "tablas_multinivel",
+        33,
+        61
+      ]
+    ],
+    "2025/Clase_10": [
+      [
+        "swap",
+        1,
+        13
+      ],
+      [
+        "reemplazo_paginas",
+        14,
+        45
+      ]
+    ],
+    "2025/Clase_11": [
+      [
+        "dispositivos_io",
+        1,
+        29
+      ],
+      [
+        "fs_api",
+        30,
+        60
+      ]
+    ],
+    "2025/Clase_12": [
+      [
+        "fs_implementacion",
+        1,
+        39
+      ]
+    ],
+    "2026/TICS_312_000_26_CFuentes": [
+      [
+        "intro_so",
+        1,
+        15
+      ],
+      [
+        "curso_admin",
+        16,
+        30
+      ],
+      [
+        "estructura_so",
+        31,
+        52
+      ]
+    ],
+    "2026/TICS_312_001_CF_26": [
+      [
+        "procesos",
+        1,
+        34
+      ],
+      [
+        "api_procesos",
+        35,
+        46
+      ],
+      [
+        "lde",
+        47,
+        59
+      ]
+    ],
+    "2026/TICS_312_003_F": [
+      [
+        "lde",
+        1,
+        12
+      ],
+      [
+        "sched_basico",
+        13,
+        69
+      ],
+      [
+        "mlfq",
+        70,
+        106
+      ]
+    ],
+    "2026/TICS_312_Threads_Intro_CF": [
+      [
+        "threads",
+        1,
+        27
+      ]
+    ],
+    "2026/TICS_312_Lock_CF_26": [
+      [
+        "threads",
+        1,
+        9
+      ],
+      [
+        "locks",
+        10,
+        44
+      ]
+    ],
+    "2026/TICS_312_Memoria_01": [
+      [
+        "espacio_direcciones",
+        1,
+        20
+      ],
+      [
+        "traduccion_direcciones",
+        21,
+        38
+      ],
+      [
+        "segmentacion",
+        39,
+        60
+      ]
+    ],
+    "2026/TICS_312_ch18_19": [
+      [
+        "paginacion",
+        1,
+        21
+      ],
+      [
+        "tlb",
+        22,
+        32
+      ]
+    ],
+    "2026/TICS_312_010_26": [
+      [
+        "dispositivos_io",
+        1,
+        27
+      ],
+      [
+        "fs_api",
+        28,
+        56
+      ]
+    ],
+    "2026/TICS_312_011_26": [
+      [
+        "fs_implementacion",
+        1,
+        41
+      ]
+    ],
+    "2025/133009": {
+      "kind": "programa",
+      "sections": [
+        [
+          "curso_admin",
+          1,
+          3
+        ]
+      ]
+    },
+    "2025/Pauta Prueba_1": {
+      "kind": "evaluacion",
+      "sections": [
+        [
+          "eval_conceptos",
+          1,
+          4
+        ],
+        [
+          "sched_basico",
+          5,
+          6
+        ],
+        [
+          "threads",
+          7,
+          10
+        ],
+        [
+          "semaforos",
+          11,
+          13
+        ]
+      ]
+    },
+    "2025/Pauta Prueba_2-1": {
+      "kind": "evaluacion",
+      "sections": [
+        [
+          "eval_conceptos",
+          1,
+          3
+        ],
+        [
+          "reemplazo_paginas",
+          4,
+          6
+        ],
+        [
+          "paginacion",
+          7,
+          8
+        ],
+        [
+          "fs_implementacion",
+          9,
+          10
+        ],
+        [
+          "traduccion_direcciones",
+          11,
+          12
+        ]
+      ]
+    },
+    "2025/Pauta_Prueba2_2023-2 SO_Para_Repasar": {
+      "kind": "repaso",
+      "sections": [
+        [
+          "eval_conceptos",
+          1,
+          3
+        ],
+        [
+          "paginacion",
+          4,
+          4
+        ]
+      ]
+    },
+    "2025/INFORME_Tarea0": {
+      "kind": "tarea",
+      "sections": [
+        [
+          "lab_xv6",
+          1,
+          3
+        ]
+      ]
+    },
+    "2025/INFORME_Tarea1": {
+      "kind": "tarea",
+      "sections": [
+        [
+          "estructura_so",
+          1,
+          12
+        ]
+      ]
+    },
+    "2025/Informe_Tarea2": {
+      "kind": "tarea",
+      "sections": [
+        [
+          "sched_proporcional",
+          1,
+          11
+        ]
+      ]
+    },
+    "2025/Informe_Tarea3": {
+      "kind": "tarea",
+      "sections": [
+        [
+          "paginacion",
+          1,
+          2
+        ]
+      ]
+    },
+    "2026/142302 (2)": {
+      "kind": "programa",
+      "sections": [
+        [
+          "curso_admin",
+          1,
+          4
+        ]
+      ]
+    }
+  },
+  "course": {
+    "_comment": "Estructura de evaluación declarada por el propio curso (curada a mano, con fuente). Se usa en density.py para la carga evaluativa.",
+    "2025": {
+      "pruebas": 2,
+      "tareas": "obligatorias",
+      "examen": true,
+      "ponderacion": null,
+      "src": "2025/Clase_01 págs. 15-16 ('2 Pruebas (P1 y P2) | Tareas (T) | Examen Final'; tareas = modificar un SO educacional)"
+    },
+    "2026": {
+      "pruebas": 3,
+      "tareas": "opcionales",
+      "examen": true,
+      "ponderacion": "P1 30%, P2 35%, P3 35% (NPE); NF = 0,30·NE + 0,70·NPE si rinde examen",
+      "src": "2026/TICS_312_000_26_CFuentes págs. 20-21 ('Tareas opcionales', '3 Pruebas (P1, P2, P3)'); 2026/142302 (2) pág. 3"
+    }
   }
 }

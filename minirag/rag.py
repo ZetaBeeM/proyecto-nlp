@@ -17,15 +17,16 @@ import re
 from dataclasses import dataclass, field
 
 from . import config, density
-from .ingest import load_chunks
+from .ingest import KIND_LABELS, load_chunks
 from .llm import chat
 from .retrieval import Hit, make_retriever
 from .textproc import strip_accents, tokenize
 
-ABSTAIN = "No encontré esa información en las presentaciones del ramo."
+ABSTAIN = "No encontré esa información en el material del ramo."
 
-SYSTEM_PROMPT = f"""Eres un asistente que responde preguntas sobre las presentaciones del ramo \
-"Sistemas Operativos" de la Universidad Adolfo Ibáñez, semestres S2-2025 y S2-2026.
+SYSTEM_PROMPT = f"""Eres un asistente que responde preguntas sobre el material del ramo \
+"Sistemas Operativos" de la Universidad Adolfo Ibáñez, semestres S2-2025 y S2-2026: presentaciones de clase, \
+programas del curso, pautas de pruebas e informes de tareas. Cada fragmento indica su año y su tipo.
 
 REGLAS OBLIGATORIAS:
 1. Responde SOLO con información presente en los FRAGMENTOS y en las MÉTRICAS entregadas. \
@@ -42,7 +43,7 @@ COMPARATIVE_RE = re.compile(r"\b(compar\w*|diferenci\w*|cambi\w*|vs|versus|entre
                             r"ambos|antes|ahora|mas dificil|aument\w*|disminu\w*|evolucion\w*)\b")
 DENSITY_RE = re.compile(r"\b(densidad|dens[oa]s?|cuant[oa]s|cantidad|numero de|slides|diapositivas|palabras|"
                         r"concepto\w*|contenido\w*|dificil\w*|dificultad|carga|cobertura|temas?|extens\w*|"
-                        r"elimina\w*|dejaron|agreg\w*|nuevo\w*)\b")
+                        r"elimina\w*|dejaron|agreg\w*|nuevo\w*|tareas?|pruebas?|evaluac\w*)\b")
 YEAR_RE = re.compile(r"\b(2025|2026)\b")
 SUPPORT_MIN = 0.35  # respaldo léxico mínimo por oración (ver verify_sentences)
 
@@ -102,7 +103,8 @@ class MiniRAG:
         for i, h in enumerate(hits, 1):
             c = h.chunk
             body = c.text.split("\n", 1)[1] if "\n" in c.text else c.text
-            parts.append(f"[{i}] (año {c.year} | {c.deck} | {c.topic_label} | págs. {c.pages[0]}-{c.pages[-1]})\n{body}")
+            parts.append(f"[{i}] (año {c.year} | {KIND_LABELS.get(c.kind, c.kind)}: {c.deck} | {c.topic_label} | "
+                         f"págs. {c.pages[0]}-{c.pages[-1]})\n{body}")
         return "\n\n".join(parts)
 
     def ask(self, question: str) -> Answer:

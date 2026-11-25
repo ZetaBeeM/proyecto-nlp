@@ -41,8 +41,11 @@ def eval_retrieval(retrievers=("tfidf", "bm25", "dense", "hybrid"), k=config.TOP
             gold = set(q["gold_docs"])
             ranks = [i for i, d in enumerate(ranking, 1) if d in gold]
             first = ranks[0] if ranks else None
+            # comparativas: al menos un documento gold de cada año presente en el gold
+            years_ok = all(any(g in ranking for g in gold if g.startswith(y + ":"))
+                           for y in {g.split(":")[0] for g in gold})
             rows.append({"id": q["id"], "first_rank": first, "ranking": ranking[:k],
-                         "all_gold": gold <= set(ranking) if q.get("require_all_gold") else None})
+                         "all_gold": years_ok if q.get("require_all_gold") else None})
         n = len(rows)
         comp = [r for r in rows if r["all_gold"] is not None]
         summary[name] = {
@@ -135,7 +138,7 @@ def report() -> str:
         for name, m in json.loads(rp.read_text())["summary"].items():
             hk = next(v for k, v in m.items() if k.startswith("hit@") and k not in ("hit@1", "hit@3"))
             L.append(f"| {name} | {m['hit@1']} | {m['hit@3']} | {hk} | {m['mrr']} | {m['all_gold@k (comparativas)']} |")
-    L += ["", "## End-to-end (40 preguntas)", "",
+    L += ["", f"## End-to-end ({len(load_questions())} preguntas)", "",
           "| Retriever | LLM | Exactitud (respondibles) | Cobertura hechos | Abstención correcta | Falsa abstención | "
           "Resp. con números no respaldados | Resp. con bajo respaldo léxico | Seg/pregunta |",
           "|---|---|---:|---:|---:|---:|---:|---:|---:|"]

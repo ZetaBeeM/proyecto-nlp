@@ -22,7 +22,8 @@ def cmd_index(_):
     docs = ingest.build_documents()
     chunks = ingest.chunk_documents(docs)
     ingest.save_corpus(docs, chunks)
-    print(f"{len(docs)} documentos, {len(chunks)} chunks "
+    files = {(d.year, d.deck) for d in docs}
+    print(f"{len(files)} archivos, {len(docs)} documentos, {len(chunks)} chunks "
           f"({sum(d.year == '2025' for d in docs)} de 2025, {sum(d.year == '2026' for d in docs)} de 2026)")
     density.save(density.compute(docs))
     print(f"métricas de densidad -> {config.RESULTS_DIR / 'densidad.md'}")
@@ -38,7 +39,7 @@ def print_answer(ans, show_context=False):
     for i, h in enumerate(ans.hits, 1):
         c = h.chunk
         mark = "*" if i in ans.cited else " "
-        print(f" {mark}[{i}] {c.year} | {c.deck}.pdf págs. {c.pages[0]}-{c.pages[-1]} | {c.topic_label}")
+        print(f" {mark}[{i}] {c.year} | {c.deck} págs. {c.pages[0]}-{c.pages[-1]} | {c.topic_label}")
     for w in ans.warnings:
         print(f" ⚠ {w}")
     if show_context:

@@ -1,5 +1,5 @@
 {
- "_comment": "Set de evaluación. gold_docs: documentos (doc_id) que contienen la respuesta; basta recuperar uno, salvo require_all_gold=true (preguntas comparativas: deben recuperarse ambos años). must_include: lista de grupos de hechos clave; cada grupo es una lista de alternativas (sin tildes, minúsculas). Una respuesta es correcta si cubre TODOS los grupos. type=unanswerable: la información NO está en las presentaciones; lo correcto es abstenerse. Todos los hechos fueron verificados contra el texto de las slides (ver comentario 'src').",
+ "_comment": "Set de evaluación. gold_docs: documentos (doc_id) que contienen la respuesta; basta recuperar uno, salvo require_all_gold=true (preguntas comparativas: debe recuperarse al menos un documento gold de CADA año). must_include: lista de grupos de hechos clave; cada grupo es una lista de alternativas (sin tildes, minúsculas). Una respuesta es correcta si cubre TODOS los grupos. type=unanswerable: la información NO está en las presentaciones; lo correcto es abstenerse. Todos los hechos fueron verificados contra el texto de las slides (ver comentario 'src').",
  "questions": [
   {
    "id": "q01",
@@ -196,7 +196,8 @@
    "question": "¿Cuántas pruebas tenía el curso en 2025 y cuántas en 2026?",
    "gold_docs": [
     "2025:Clase_01:curso_admin",
-    "2026:TICS_312_000_26_CFuentes:curso_admin"
+    "2026:TICS_312_000_26_CFuentes:curso_admin",
+    "2026:142302 (2):curso_admin"
    ],
    "require_all_gold": true,
    "must_include": [
@@ -219,7 +220,8 @@
    "question": "¿En qué libro se basa el curso en 2026?",
    "gold_docs": [
     "2026:TICS_312_000_26_CFuentes:curso_admin",
-    "2026:TICS_312_000_26_CFuentes:estructura_so"
+    "2026:TICS_312_000_26_CFuentes:estructura_so",
+    "2026:142302 (2):curso_admin"
    ],
    "must_include": [
     [
@@ -239,10 +241,12 @@
    ],
    "must_include": [
     [
-     "turnaround"
+     "turnaround",
+     "tiempo de respuesta",
+     "tiempo de retorno"
     ]
    ],
-   "src": "2025 Clase_04 p16; 2026 003_F p27-29"
+   "src": "2025 Clase_04 p16; 2026 003_F p27-29; 2025 Pauta Prueba_1 p4 (1.9)"
   },
   {
    "id": "q14",
@@ -365,7 +369,8 @@
    "question": "¿Qué es DMA (Direct Memory Access)?",
    "gold_docs": [
     "2025:Clase_11:dispositivos_io",
-    "2026:TICS_312_010_26:dispositivos_io"
+    "2026:TICS_312_010_26:dispositivos_io",
+    "2025:Pauta Prueba_2-1:eval_conceptos"
    ],
    "must_include": [
     [
@@ -520,15 +525,15 @@
    "gold_docs": [],
    "must_include": [
     [
-     "23.4",
-     "23,4"
+     "23.3",
+     "23,3"
     ],
     [
-     "23.2",
-     "23,2"
+     "23.1",
+     "23,1"
     ]
    ],
-   "src": "results/densidad.json"
+   "src": "results/densidad.md (densidad por slide, sólo clases)"
   },
   {
    "id": "q29",
@@ -673,7 +678,8 @@
    "question": "¿Qué componente de hardware guarda las traducciones de páginas usadas recientemente para no consultar siempre la tabla?",
    "gold_docs": [
     "2025:Clase_09:tlb",
-    "2026:TICS_312_ch18_19:tlb"
+    "2026:TICS_312_ch18_19:tlb",
+    "2025:Pauta Prueba_2-1:eval_conceptos"
    ],
    "must_include": [
     [
@@ -682,6 +688,185 @@
     ]
    ],
    "src": "2025 Clase_09 p22"
+  },
+  {
+   "id": "q41",
+   "type": "factual",
+   "question": "¿Cómo se ponderan las pruebas oficiales en la nota de presentación a examen en 2026?",
+   "gold_docs": [
+    "2026:142302 (2):curso_admin"
+   ],
+   "must_include": [
+    [
+     "30"
+    ],
+    [
+     "35"
+    ]
+   ],
+   "src": "2026 142302 (2) p3"
+  },
+  {
+   "id": "q42",
+   "type": "factual",
+   "question": "¿Qué llamadas al sistema se agregaron a xv6 en la Tarea 1?",
+   "gold_docs": [
+    "2025:INFORME_Tarea1:estructura_so"
+   ],
+   "must_include": [
+    [
+     "getppid"
+    ],
+    [
+     "getancestor"
+    ]
+   ],
+   "src": "2025 INFORME_Tarea1 §1-2"
+  },
+  {
+   "id": "q43",
+   "type": "factual",
+   "question": "En la implementación de lottery scheduling de la Tarea 2, ¿cuántos tickets recibe por defecto un proceso nuevo?",
+   "gold_docs": [
+    "2025:Informe_Tarea2:sched_proporcional"
+   ],
+   "must_include": [
+    [
+     "100"
+    ]
+   ],
+   "src": "2025 Informe_Tarea2 §2 (allocproc)"
+  },
+  {
+   "id": "q44",
+   "type": "factual",
+   "question": "En la pauta de la Prueba 2 de 2025, ¿qué tasa de aciertos obtienen OPT, FIFO y LRU con 3 marcos?",
+   "gold_docs": [
+    "2025:Pauta Prueba_2-1:reemplazo_paginas"
+   ],
+   "must_include": [
+    [
+     "60"
+    ],
+    [
+     "45"
+    ]
+   ],
+   "src": "2025 Pauta Prueba_2-1 p5"
+  },
+  {
+   "id": "q45",
+   "type": "factual",
+   "question": "Según la pauta de la Prueba 1 de 2025, ¿con qué valor inicial debe crearse el semáforo para usarlo como mutex?",
+   "gold_docs": [
+    "2025:Pauta Prueba_1:semaforos"
+   ],
+   "must_include": [
+    [
+     "debe ser 1",
+     "ser 1",
+     "valor 1",
+     "de 1",
+     "en 1",
+     "x = 1",
+     "x=1",
+     "es 1",
+     "igual a 1",
+     "inicial 1"
+    ]
+   ],
+   "src": "2025 Pauta Prueba_1 p13"
+  },
+  {
+   "id": "q46",
+   "type": "factual",
+   "question": "¿Qué bit de la entrada de la tabla de páginas modifica mrdprotect en la Tarea 3?",
+   "gold_docs": [
+    "2025:Informe_Tarea3:paginacion"
+   ],
+   "must_include": [
+    [
+     "pte_r"
+    ]
+   ],
+   "src": "2025 Informe_Tarea3 p1"
+  },
+  {
+   "id": "q47",
+   "type": "factual",
+   "question": "En la prueba de repaso de 2023, ¿cuántos bits de offset hay con páginas de 512 KB y un espacio virtual de 8 MB?",
+   "gold_docs": [
+    "2025:Pauta_Prueba2_2023-2 SO_Para_Repasar:paginacion"
+   ],
+   "must_include": [
+    [
+     "19"
+    ]
+   ],
+   "src": "2025 Pauta_Prueba2_2023-2 p4"
+  },
+  {
+   "id": "q48",
+   "type": "paraphrase",
+   "question": "¿Qué error salió al instalar WSL para la Tarea 0 y cómo se solucionó?",
+   "gold_docs": [
+    "2025:INFORME_Tarea0:lab_xv6"
+   ],
+   "must_include": [
+    [
+     "virtualizacion"
+    ],
+    [
+     "bios"
+    ]
+   ],
+   "src": "2025 INFORME_Tarea0 p1"
+  },
+  {
+   "id": "q49",
+   "type": "factual",
+   "question": "En la pauta de la Prueba 1 de 2025, ¿cuál es el turnaround time promedio de STCF?",
+   "gold_docs": [
+    "2025:Pauta Prueba_1:sched_basico"
+   ],
+   "must_include": [
+    [
+     "10.4",
+     "10,4"
+    ]
+   ],
+   "src": "2025 Pauta Prueba_1 p5"
+  },
+  {
+   "id": "q50",
+   "type": "comparative",
+   "question": "¿Las tareas eran obligatorias en 2025 y en 2026?",
+   "gold_docs": [
+    "2025:Clase_01:curso_admin",
+    "2026:TICS_312_000_26_CFuentes:curso_admin"
+   ],
+   "must_include": [
+    [
+     "opcional"
+    ]
+   ],
+   "src": "2025 Clase_01 p15-16; 2026 000 p20",
+   "require_all_gold": true
+  },
+  {
+   "id": "q51",
+   "type": "density",
+   "question": "¿Cambió la carga evaluativa (pruebas y tareas) entre 2025 y 2026?",
+   "gold_docs": [],
+   "must_include": [
+    [
+     "3"
+    ],
+    [
+     "opcional"
+    ]
+   ],
+   "src": "topics.json course + densidad.md"
   }
  ]
 }
